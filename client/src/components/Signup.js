@@ -7,13 +7,16 @@ function Signup() {
     password: ""
   })
 
+  function handleSubmit(e) {
+
+  }
 
 
   function handleChange(e) {
-    const key = e.tartget.id
+    const key = e.target.id
     setSignupData({
       ...signupData, 
-      [key]: e.tartget.value
+      [key]: e.target.value
     })
   }
 
