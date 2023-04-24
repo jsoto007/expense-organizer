@@ -25,7 +25,7 @@ function Signup( { onLogin } ) {
 
 
   function handleChange(e) {
-    const key = e.target.id
+    const key = e.target.name
     setSignupData({
       ...signupData, 
       [key]: e.target.value
@@ -39,7 +39,7 @@ function Signup( { onLogin } ) {
           type="text"
           name="username"
           value={signupData.username}
-          id="username"
+          id="username1"
           onChange={handleChange}
           placeholder="Username"
         />
@@ -47,7 +47,7 @@ function Signup( { onLogin } ) {
           type="password"
           name="password"
           value={signupData.password}
-          id="password"
+          id="password1"
           onChange={handleChange}
           placeholder="Password"
         />
