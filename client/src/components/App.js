@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-    This is the App
+     The current user is:  {currentUser.username}
     <Login onLogin={setCurrentUser} />
     <Signup onLogin={setCurrentUser} />
     </div>
