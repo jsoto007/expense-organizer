@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
 
-function Signup() {
+function Signup( { onLogin } ) {
 
-  const [currentUser, setCurrentUser] = useState()
+  
   const [signupData, setSignupData] = useState({
     username: "",
     password: ""
@@ -20,7 +20,7 @@ function Signup() {
     })
     .then(resp => {
       if(resp.ok){
-        resp.json().then(setCurrentUser)
+        resp.json().then(onLogin)
       }
     })
   }
