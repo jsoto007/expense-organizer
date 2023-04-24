@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Signup from "./Signup";
 import Login from "./Login"
+import Navbar from "./Navbar";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
   return (
     <div className="App">
      The current user is:  {currentUser.username}
+     <Navbar onLogout={setCurrentUser} />
     <Login onLogin={setCurrentUser} />
     <Signup onLogin={setCurrentUser} />
     </div>
