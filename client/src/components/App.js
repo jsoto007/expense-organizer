@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import {Route, Switch } from "react-router-dom"
 import Signup from "./Signup";
 import Login from "./Login"
 import Navbar from "./Navbar";
@@ -22,8 +23,16 @@ function App() {
     <div className="App">
      The current user is:  {currentUser.username}
      <Navbar onLogout={setCurrentUser} />
-    <Login onLogin={setCurrentUser} />
-    <Signup onLogin={setCurrentUser} />
+
+     <Switch>
+      <Route exact path="/">
+        Hello, Welcome!
+      </Route>
+      <Route exact path="/signup/users">
+        <Login onLogin={setCurrentUser} />
+        <Signup onLogin={setCurrentUser} />
+      </Route>
+     </Switch>
     </div>
   );
 }
