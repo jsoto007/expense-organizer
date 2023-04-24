@@ -7,6 +7,11 @@ class UsersController < ApplicationController
 
   end 
 
+  def show 
+    current_user = User.find(session[:user_id])
+    render json: current_user
+  end 
+
   private
 
   def user_params

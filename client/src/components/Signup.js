@@ -9,8 +9,6 @@ function Signup( { onLogin } ) {
     password: ""
   })
 
-
-
   function handleSubmit(e) {
       e.preventDefault();
     fetch(`/users`, {
