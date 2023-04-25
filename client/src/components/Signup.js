@@ -33,7 +33,7 @@ function Signup( { onLogin } ) {
   }
 
   return (
-    <div>
+    <div className="login-page">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -42,6 +42,7 @@ function Signup( { onLogin } ) {
           id="username1"
           onChange={handleChange}
           placeholder="Username"
+          className="auth-field"
         />
         <input
           type="password"
@@ -50,6 +51,7 @@ function Signup( { onLogin } ) {
           id="password1"
           onChange={handleChange}
           placeholder="Password"
+          className="auth-field"
         />
         <button type="submit">Create Account</button>
       </form>

@@ -11,3 +11,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+img {
+  max-height: 140px;
+  margin-top: 20%;
+}
+
+#login-signup {
+  float: right; 
+  margin-right: 40px;
+  background-color: #989898ae;
+  border-radius: 26px;
+  margin-top: 20%;
+  font-size: x-large;
+  padding: 105px;
+  font-style: inherit;
+
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Times New Roman', Times, serif;
+  border-radius: 10px;
+  font-size: 17px;
+  padding: 14px 16px;
+  width: 330px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+
+nav a.active {
+  height: 50 vh;
+  min-height: 400px;
+  color: black;
+  border-radius: 12px;
+  border: 2px solid rgba(86, 175, 253, 0.695);
+}
+
+button {
+  font-size: x-large;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+}

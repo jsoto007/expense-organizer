@@ -12,7 +12,7 @@ function Navbar( { onLogout } ) {
   }
 
   return (
-    <div>
+    <div >
       <nav id="nav-bar">
         <NavLink
           className="nav-link"

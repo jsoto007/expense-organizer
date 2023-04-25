@@ -3,6 +3,7 @@ import {Route, Switch } from "react-router-dom"
 import Signup from "./Signup";
 import Login from "./Login"
 import Navbar from "./Navbar";
+import Auth from "./Auth";
 
 function App() {
 
@@ -17,20 +18,21 @@ function App() {
     })
   }, [])
 
-  if(!currentUser) return <Login setCurrentUser={setCurrentUser} />
+  if(!currentUser) return <Auth onLogin={setCurrentUser} />
 
   return (
     <div className="App">
      The current user is:  {currentUser.username}
      <Navbar onLogout={setCurrentUser} />
-
      <Switch>
       <Route exact path="/">
-        Hello, Welcome!
+        <Auth 
+          onLogin={setCurrentUser}
+        />
       </Route>
       <Route exact path="/signup/users">
-        <Login onLogin={setCurrentUser} />
-        <Signup onLogin={setCurrentUser} />
+        {/* <Login onLogin={setCurrentUser} />
+        <Signup onLogin={setCurrentUser} /> */}
       </Route>
      </Switch>
     </div>

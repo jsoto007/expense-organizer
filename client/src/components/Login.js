@@ -32,8 +32,9 @@ function handleChange(e) {
 }
 
 return (
-  <div>
-    <form onSubmit={handleSubmit}>
+  <div className="login-page">
+      
+    <form className="login-form" onSubmit={handleSubmit}>
       <input
         type="text"
         name="username"
@@ -41,6 +42,7 @@ return (
         id="username"
         onChange={handleChange}
         placeholder="Username"
+        className="auth-field"
       />
       <input
         type="password"
@@ -49,6 +51,7 @@ return (
         id="password"
         onChange={handleChange}
         placeholder="Password"
+        className="auth-field"
       />
       <button type="submit">Log In</button>
     </form>
