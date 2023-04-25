@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 
 code {
@@ -17,10 +18,11 @@ img {
   margin-top: 20%;
 }
 
+
 #login-signup {
   float: right; 
   margin-right: 40px;
-  background-color: #989898ae;
+  background-color: #9898985c;
   border-radius: 26px;
   margin-top: 20%;
   font-size: x-large;
@@ -42,6 +44,7 @@ img {
 .column {
   float: left;
   width: 50%;
+
 }
 
 
