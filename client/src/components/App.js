@@ -26,13 +26,7 @@ function App() {
      <Navbar onLogout={setCurrentUser} />
      <Switch>
       <Route exact path="/">
-        <Auth 
-          onLogin={setCurrentUser}
-        />
-      </Route>
-      <Route exact path="/signup/users">
-        {/* <Login onLogin={setCurrentUser} />
-        <Signup onLogin={setCurrentUser} /> */}
+        This is home !!!
       </Route>
      </Switch>
     </div>
