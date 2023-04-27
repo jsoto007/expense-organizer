@@ -28,6 +28,7 @@ function App() {
       <Route exact path="/">
         This is home !!!
       </Route>
+      
      </Switch>
     </div>
   );

@@ -13,22 +13,23 @@ code {
     monospace;
 }
 
-img {
-  max-height: 140px;
-  margin-top: 20%;
-}
-
 
 #login-signup {
   float: right; 
   margin-right: 40px;
-  background-color: #9898985c;
+  background-color: #FDFDFD;
   border-radius: 26px;
   margin-top: 20%;
   font-size: x-large;
   padding: 105px;
   font-style: inherit;
 
+}
+
+#company-logo {
+  max-height: 140px;
+  margin-top: 20%;
+  border-radius: 10%;
 }
 
 .auth-field {
@@ -39,6 +40,7 @@ img {
   font-size: 17px;
   padding: 14px 16px;
   width: 330px;
+  background-color: #EFEFEF;
 }
 
 .column {
@@ -63,4 +65,10 @@ button {
   border-radius: 10px;
   cursor: pointer;
   font-family: 'Times New Roman', Times, serif;
+  background-color: #BED2C4;
+
+}
+
+body {
+  background-color: #EFEFEF;
 }

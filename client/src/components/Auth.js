@@ -7,8 +7,9 @@ function Auth( { onLogin } ) {
 
   return (
     <div className="landing-page">
-      <img 
-        src="https://lh4.googleusercontent.com/8FvZiF1XfVafZSPWT7fiNaoOVKRAUkDBZiy849WVSOxoDO0t4TwoVOqEO4mV4TK8AdrvFIho6Jn4gWerghlXyHPXOyCei4CyurxgkFPn0i9TZBUhg3_Pq_QOaJhFxrUL4w=w1280"
+      <img
+        id="company-logo"
+        src="https://lh6.googleusercontent.com/1IDWLxfxztFCdvuErTDv3MJUygQEod9jYQipnaIvSzW0GW1Ezp7w4TBGZAsjLtjb-r2Hun8f7N4G1x48FEJW4orXwOzynCBKs0MH-c5YKIHBhoISqwlMagDEv_TwvosDSQ=w1280"
         alt="Expense Tacker"
       ></img>
       <div className="landing-page" id="login-signup">
