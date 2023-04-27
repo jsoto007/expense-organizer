@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :users, only:[:show, :create]
+  resources :expenses, only:[:show]
+  get "/expenses", to: "expenses#show"
   post "/login", to: "sessions#create"
   get "/auth", to: "users#show"
   delete "/logout", to: "sessions#destroy"

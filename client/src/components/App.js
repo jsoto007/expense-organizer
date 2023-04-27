@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import {Route, Switch } from "react-router-dom"
-import Signup from "./Signup";
-import Login from "./Login"
 import Navbar from "./Navbar";
 import Auth from "./Auth";
+import Home from "./Home";
 
 function App() {
 
@@ -27,6 +26,9 @@ function App() {
      <Switch>
       <Route exact path="/">
         This is home !!!
+        <Home currentUser={currentUser} />
+      </Route>
+      <Route exact path="/user_id/home">
       </Route>
       
      </Switch>
