@@ -3,6 +3,7 @@ import {Route, Switch } from "react-router-dom"
 import Navbar from "./Navbar";
 import Auth from "./Auth";
 import Home from "./Home";
+import Expenses from "./Expenses";
 
 function App() {
 
@@ -13,11 +14,13 @@ function App() {
     .then(resp => {
       if (resp.ok){
         resp.json().then(user => setCurrentUser(user))
-      } 
+      }
     })
   }, [])
 
   if(!currentUser) return <Auth onLogin={setCurrentUser} />
+
+
 
   return (
     <div className="App">
@@ -26,7 +29,8 @@ function App() {
      <Switch>
       <Route exact path="/">
         This is home !!!
-        <Home currentUser={currentUser} />
+        {/* <Home currentUser={currentUser} /> */}
+        <Expenses currentUser={currentUser} />
       </Route>
       <Route exact path="/user_id/home">
       </Route>

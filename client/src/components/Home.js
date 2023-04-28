@@ -8,12 +8,21 @@ function Home( { currentUser } ) {
   useEffect(()=> {
     fetch('/expenses')
     .then(resp => resp.json())
-    .then(data => console.log(data))
+    .then(data => setUserData(data))
   }, [currentUser])
 
+  console.log(userData)
   return (
     <div>
-      This is the home component
+      {userData.map((expense) => {
+        return (
+          <div>
+            <li key={expense.id}>
+              {expense.description}
+            </li>
+          </div>
+        )
+      })}
     </div>
   )
 }
