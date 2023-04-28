@@ -22,7 +22,7 @@ Category.create(name: "Entertaiment", description: "Entertainment includes: Conc
   
   expense = Expense.create(
     description: Faker::Movie.title,
-    amount: Faker::Number,
+    amount: Faker::Number.number(digits: 4),
     date: Faker::Date.between(from: '2020-01-23', to: '2023-05-25'),
     user_id: user.id,
     category_id: category.id

@@ -16,7 +16,7 @@ function Expenses() {
     <div>
       {userExpense.map((expense) => {
         return (
-          <li key={expense.id}>{expense.description}</li>
+          <li key={expense.id}>{expense.description} | {expense.amount} | {expense.category.name}</li>
         )
       })}
     </div>
