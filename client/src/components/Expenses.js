@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ExpenseCard from "./ExpenseCard";
 
 
 function Expenses() {
@@ -16,11 +17,7 @@ function Expenses() {
     <div>
       {userExpense.map((expense) => {
         return (
-          <ul key={expense.id}>
-            <li className="expense-list">{expense.description}</li>
-            <li className="expense-list">{expense.amount}</li>
-            <li className="expense-list">{expense.category.name}</li>
-          </ul>
+          <ExpenseCard expense={expense} />
         )
       })}
     </div>

@@ -27,15 +27,18 @@ code {
 }
 
 #company-logo {
-  max-height: 140px;
+  max-height: 200px;
+  min-height: auto;
   margin-top: 20%;
   border-radius: 10%;
+  margin-left: 20%;
 }
 
 #logout-btn {
   float: right;
   padding: 2px;
   background-color: #FDFDFD;
+
 }
 
 #nav-bar {
