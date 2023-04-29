@@ -38,6 +38,13 @@ code {
   background-color: #FDFDFD;
 }
 
+#nav-bar {
+  background-color: #FDFDFD;
+  padding: 10px;
+  font-weight: bold;
+  font-size: x-large;
+}
+
 .auth-field {
   display: flex;
   flex-direction: column;
@@ -61,7 +68,9 @@ nav a.active {
   min-height: 400px;
   color: black;
   border-radius: 12px;
-  border: 2px solid rgba(86, 175, 253, 0.695);
+  background-color: #EFEFEF;
+  font-family: 'Times New Roman', Times, serif;
+
 }
 
 button {
