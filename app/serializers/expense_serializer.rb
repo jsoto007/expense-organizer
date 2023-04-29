@@ -1,4 +1,4 @@
 class ExpenseSerializer < ActiveModel::Serializer
   attributes :id, :description, :amount
-  has_many :category
+  belongs_to :category
 end

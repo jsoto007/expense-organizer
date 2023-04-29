@@ -16,7 +16,11 @@ function Expenses() {
     <div>
       {userExpense.map((expense) => {
         return (
-          <li key={expense.id}>{expense.description} | {expense.amount} | {expense.category.name}</li>
+          <ul key={expense.id}>
+            <li className="expense-list">{expense.description}</li>
+            <li className="expense-list">{expense.amount}</li>
+            <li className="expense-list">{expense.category.name}</li>
+          </ul>
         )
       })}
     </div>
