@@ -32,6 +32,12 @@ code {
   border-radius: 10%;
 }
 
+#logout-btn {
+  float: right;
+  padding: 2px;
+  background-color: #FDFDFD;
+}
+
 .auth-field {
   display: flex;
   flex-direction: column;
