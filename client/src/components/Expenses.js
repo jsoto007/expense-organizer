@@ -17,7 +17,7 @@ function Expenses() {
     <div>
       {userExpense.map((expense) => {
         return (
-          <ExpenseCard expense={expense} />
+          <ExpenseCard  key={expense.key} expense={expense} />
         )
       })}
     </div>

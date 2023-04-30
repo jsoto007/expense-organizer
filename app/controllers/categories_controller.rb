@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
 
   def create
-    byebug
+    category = Category.create(name: params[:name], description: params[:description])
+    render json: category
   end 
 end

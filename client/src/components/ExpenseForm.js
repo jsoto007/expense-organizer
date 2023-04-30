@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function ExpenseForm() {
   const [expenseData, setExpenseData] = useState({
-    amount: 123, 
+    name: "AirPlaanes dfd",
     description: "This is it for now",
   
   })
