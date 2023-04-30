@@ -9,7 +9,6 @@ function ExpenseCard( { expense } ) {
       <ul key={expense.id}>
             <li className="expense-list">{expense.description}</li>
             <li className="expense-list">{expense.amount}</li>
-            <li className="expense-list">{expense.category.name}</li>
           </ul>
     </div>
   )

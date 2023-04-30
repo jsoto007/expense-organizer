@@ -19,7 +19,7 @@ code {
   margin-right: 40px;
   background-color: #FDFDFD;
   border-radius: 26px;
-  margin-top: 20%;
+  margin-top: 12%;
   font-size: x-large;
   padding: 105px;
   font-style: inherit;
@@ -29,9 +29,9 @@ code {
 #company-logo {
   max-height: 200px;
   min-height: auto;
-  margin-top: 20%;
+  margin-top: 15%;
   border-radius: 10%;
-  margin-left: 20%;
+  margin-left: 10%;
 }
 
 #logout-btn {
