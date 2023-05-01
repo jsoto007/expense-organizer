@@ -6,6 +6,8 @@ import Home from "./Home";
 import Expenses from "./Expenses";
 import CategoryForm from "./CategoryForm";
 
+import ExpenseForm from "./ExpenseForm";
+
 function App() {
 
   const [currentUser, setCurrentUser] = useState()
@@ -27,6 +29,7 @@ function App() {
     <div className="App">
      The current user is:  {currentUser.username}
      <CategoryForm />
+     <ExpenseForm />
      <Navbar onLogout={setCurrentUser} />
      <Switch>
       <Route exact path="/">

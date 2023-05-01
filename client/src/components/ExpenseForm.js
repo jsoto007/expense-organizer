@@ -1,29 +1,59 @@
 import React, { useState } from "react";
 
 function ExpenseForm() {
-  const [categoryData, setCategoryData] = useState({
-    name: "AirPlaanes dfd",
-    description: "This is it for now",
+  const [expenseData, setExpenseData] = useState({
+    amount: 0,
+    description: "",
+    category_id: 28
   
   })
 
     function handleSubmit(e) {
       e.preventDefault();
-      fetch(`/categories`, {
+      fetch(`/expenses`, {
         method: "POST", 
         headers: {'Content-Type': 'application/json'},
-        body:JSON.stringify(categoryData)
+        body:JSON.stringify(expenseData)
       })
       .then(resp => {
         if (resp.ok){
-          resp.json().then(data => console.log(data))
+          resp.json().then(data => setExpenseData(data))
         }
       })
     }
 
+    function handleChange(e) {
+      const key = e.target.name;
+      setExpenseData({
+        ...expenseData, 
+        [key]: e.target.value
+      })
+
+    }
+ 
   return (
     <div>
-<button onClick={handleSubmit}>submit</button>
+   <form onSubmit={handleSubmit}>
+        <input
+          type="integer"
+          name="amount"
+          value={expenseData.amount}
+          id="amount1"
+          onChange={handleChange}
+          placeholder="amount"
+          className="expense-form"
+        />
+        <input
+          type="text"
+          name="description"
+          value={expenseData.description}
+          id="description1"
+          onChange={handleChange}
+          placeholder="description"
+          className="expense-form"
+        />
+      <button type="submit">Add Expense</button>
+    </form>
     </div>
   )
 }
