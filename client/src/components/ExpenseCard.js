@@ -7,6 +7,14 @@ function ExpenseCard( { categorizeExpense } ) {
   return (
     <div className="expense-card">
       <h3 className="category-name">{categorizeExpense.name}</h3>
+      {categorizeExpense.expenses.map((expense) => {
+        return (
+          <ul key={expense.id}>
+            <li>{expense.summary}</li>
+            <li>{expense.amount}</li>
+          </ul>
+        )
+      })}
      
     </div>
   )
