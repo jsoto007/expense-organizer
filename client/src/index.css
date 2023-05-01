@@ -47,11 +47,12 @@ code {
   font-size: x-large;
   justify-content: center;
   border: none;
-  border-radius: 10px;
+  border-radius: 25px;
   cursor: pointer;
   font-family: 'Times New Roman', Times, serif;
-  background-color: #BED2C4;
+  background-color: #D0E3CD;
   text-align: center;
+  padding: 9px;
 }
 
 .expense-card {
