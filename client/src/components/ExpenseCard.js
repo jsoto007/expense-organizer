@@ -1,8 +1,6 @@
 import React from "react";
 
-
 function ExpenseCard( { expense } ) {
-
 
   return (
     <div className="expense-card">
