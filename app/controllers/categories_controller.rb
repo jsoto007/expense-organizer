@@ -9,7 +9,7 @@ class CategoriesController < ApplicationController
 
   def index
     user = User.find_by(id: session[:user_id])
-    categories = user.categories.all
+    categories = user.categories.all.distinct
     render json: categories
   end 
 
