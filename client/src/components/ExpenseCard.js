@@ -1,14 +1,13 @@
 import React from "react";
+import Expenses from "./Expenses";
 
-function ExpenseCard( { expense } ) {
+function ExpenseCard( { categorizeExpense } ) {
+
 
   return (
     <div className="expense-card">
-      <h3 className="category-name">{expense.category.name}</h3>
-      <ul key={expense.id}>
-            <li className="expense-list">{expense.description}</li>
-            <li className="expense-list">{expense.amount}</li>
-          </ul>
+      <h3 className="category-name">{categorizeExpense.name}</h3>
+     
     </div>
   )
 }

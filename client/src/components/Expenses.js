@@ -4,20 +4,20 @@ import ExpenseCard from "./ExpenseCard";
 
 function Expenses() {
 
-  const [userExpense, setUserExpense] = useState([])
+  const [categorizeExpense, setCategorizeExpense] = useState([])
 
   useEffect(()=> {
-    fetch('/expenses')
+    fetch('/categories')
     .then(resp => resp.json())
-    .then(setUserExpense)
+    .then(setCategorizeExpense)
   }, [])
 
-  console.log(userExpense)
+  console.log(categorizeExpense)
   return (
     <div>
-      {userExpense.map((expense) => {
+      {categorizeExpense.map((expense) => {
         return (
-          <ExpenseCard  key={expense.key} expense={expense} />
+          <ExpenseCard  key={expense.key} categorizeExpense={expense} />
         )
       })}
     </div>

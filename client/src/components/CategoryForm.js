@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function CategoryForm() {
   const [categoryData, setCategoryData] = useState({
@@ -6,6 +6,12 @@ function CategoryForm() {
     description: "This is it for now",
   
   })
+
+  useEffect(()=> {
+    fetch(`/categories`)
+    .then(resp => resp.json())
+    .then(data =>console.log(data))
+  }, [])
 
     function handleSubmit(e) {
       e.preventDefault();
