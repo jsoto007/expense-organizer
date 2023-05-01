@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users, only:[:show, :create]
-  resources :expenses, only:[:show]
-  resources :categories, only:[:create]
+  resources :expenses, only:[:show, :create]
+  resources :categories, only:[:create, :show]
   get "/expenses", to: "expenses#show"
   post "/login", to: "sessions#create"
   get "/auth", to: "users#show"

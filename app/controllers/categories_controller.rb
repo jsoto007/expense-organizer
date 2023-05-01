@@ -4,4 +4,9 @@ class CategoriesController < ApplicationController
     category = Category.create(name: params[:name], description: params[:description])
     render json: category
   end 
+
+  def show
+    categories = Category.all
+    render json: categories
+  end 
 end

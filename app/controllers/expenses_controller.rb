@@ -7,4 +7,15 @@ class ExpensesController < ApplicationController
     render json: expenses
   end 
 
+  def create
+    expense = Expense.create(
+      user_id: session[:user_id], 
+      description: params[:description], 
+      amount: params[:amount], 
+      category_id: params[:category_id]
+    )
+    render json: expense
+
+  end
+
 end

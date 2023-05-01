@@ -9,7 +9,7 @@ function Auth( { onLogin } ) {
   return (
     <div className="landing-page">
       <img
-        id="company-logo"
+        id="App-logo"
         src={appLogo}
         alt="Expense Tacker"
       ></img>
