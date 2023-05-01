@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import Auth from "./Auth";
 import Home from "./Home";
 import Expenses from "./Expenses";
-import ExpenseForm from "./ExpenseForm";
+import CategoryForm from "./CategoryForm";
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
      The current user is:  {currentUser.username}
-     <ExpenseForm />
+     <CategoryForm />
      <Navbar onLogout={setCurrentUser} />
      <Switch>
       <Route exact path="/">

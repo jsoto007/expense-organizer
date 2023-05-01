@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function ExpenseForm() {
+function CategoryForm() {
   const [categoryData, setCategoryData] = useState({
     name: "AirPlaanes dfd",
     description: "This is it for now",
@@ -29,4 +29,4 @@ function ExpenseForm() {
 }
 
 
-export default ExpenseForm;
+export default CategoryForm;
