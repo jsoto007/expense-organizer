@@ -1,15 +1,18 @@
 import React, { useState } from "react";
+import { useHistory }  from "react-router-dom"
 
 function ExpenseForm() {
   const [expenseData, setExpenseData] = useState({
-    amount: 0,
+    amount: "",
     description: "",
     category_id: 28
   
   })
+  let history = useHistory();
 
     function handleSubmit(e) {
       e.preventDefault();
+
       fetch(`/expenses`, {
         method: "POST", 
         headers: {'Content-Type': 'application/json'},
@@ -19,6 +22,7 @@ function ExpenseForm() {
         if (resp.ok){
           resp.json().then(data => setExpenseData(data))
         }
+        history.push('./')
       })
     }
 

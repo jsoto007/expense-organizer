@@ -21,9 +21,15 @@ function Navbar( { onLogout } ) {
           to="/"
           exact
           >
-            
             Categories
           </NavLink>
+          <NavLink
+            className="nav-link"
+            to="/add-expenses"
+            exact
+            >
+              Add Expense
+            </NavLink>
       </nav>
     </div>
   )

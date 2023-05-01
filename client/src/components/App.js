@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import {Route, Switch } from "react-router-dom"
 import Navbar from "./Navbar";
 import Auth from "./Auth";
-import Home from "./Home";
 import Expenses from "./Expenses";
 import CategoryForm from "./CategoryForm";
 
@@ -29,15 +28,13 @@ function App() {
     <div className="App">
      The current user is:  {currentUser.username}
      <CategoryForm />
-     <ExpenseForm />
      <Navbar onLogout={setCurrentUser} />
      <Switch>
       <Route exact path="/">
-        This is home !!!
-        {/* <Home currentUser={currentUser} /> */}
         <Expenses currentUser={currentUser} />
       </Route>
-      <Route exact path="/user_id/home">
+      <Route exact path="/add-expenses">
+        <ExpenseForm />
       </Route>
       
      </Switch>

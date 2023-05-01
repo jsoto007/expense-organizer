@@ -41,11 +41,33 @@ code {
 
 }
 
+.category-name {
+  font-size: x-large;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #BED2C4;
+  text-align: center;
+}
+
+.expense-card {
+  float: left;
+  width: 20%;
+  padding: 25px;
+  font-size: small;
+}
+.nav-link {
+  margin-left: 10px;
+}
+
 #nav-bar {
   background-color: #FDFDFD;
   padding: 10px;
   font-weight: bold;
   font-size: x-large;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .auth-field {
