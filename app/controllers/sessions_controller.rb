@@ -8,8 +8,8 @@ class SessionsController < ApplicationController
     else 
       render json: {error: {login: "Invalid username or password"}}, status: :unauthorized
     end 
-
   end 
+ 
 
   def destroy
     session.delete :user_id
@@ -18,8 +18,8 @@ class SessionsController < ApplicationController
 
   private 
 
-  # def session_params
-  #   params.permit(:user_id, :username, :password)
-  # end 
+  def session_params
+    params.permit(:user_id, :username, :password)
+  end 
 
 end

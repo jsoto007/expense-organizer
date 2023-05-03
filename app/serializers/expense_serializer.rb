@@ -5,4 +5,5 @@ class ExpenseSerializer < ActiveModel::Serializer
   def summary 
     "#{self.object.description[0..15]...}"
   end
+
 end
