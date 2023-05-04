@@ -5,7 +5,7 @@ function ExpenseForm() {
   const [expenseData, setExpenseData] = useState({
     amount: "",
     description: "",
-    category_id: 28
+    category_id: 46
   
   })
   let history = useHistory();

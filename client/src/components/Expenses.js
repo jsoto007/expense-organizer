@@ -15,11 +15,11 @@ function Expenses() {
   console.log(categorizeExpense)
   return (
     <div>
-      {categorizeExpense.map((expense) => {
+      {/* {categorizeExpense.map((expense) => {
         return (
           <ExpenseCard  key={expense.key} categorizeExpense={expense} />
         )
-      })}
+      })} */}
     </div>
   )
 }

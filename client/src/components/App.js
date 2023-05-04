@@ -20,6 +20,8 @@ function App() {
     })
   }, [])
 
+  console.log("Current User", currentUser)
+
   if(!currentUser) return <Auth onLogin={setCurrentUser} />
 
 
