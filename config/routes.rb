@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, only:[:show, :create]
+  resources :users, only:[:show, :create, :index]
   resources :expenses, only:[:show, :create]
   resources :categories, only:[:index, :create]
   get "/expenses", to: "expenses#show"

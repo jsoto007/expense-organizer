@@ -9,8 +9,13 @@ class UsersController < ApplicationController
 
   def show 
     current_user = User.find(session[:user_id])
-    render json: current_user, include: ['expenses', 'expenses.category']
+    render json: current_user
   end 
+  
+  def index
+    current_user = User.find(session[:user_id])
+    render json: current_user, include: ['expenses', 'expenses.category']
+  end
 
   private
 
