@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :create, :index]
   resources :expenses, only:[:show, :create]
   resources :categories, only:[:index, :create]
-  get "/expenses", to: "expenses#show"
+  get "/expense_by_category", to: "users#expense_by_category"
   get "/auth", to: "users#show"
   # get "/categories", to: "categories#show"
   post "/login", to: "sessions#create"
