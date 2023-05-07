@@ -13,6 +13,14 @@ class CategoriesController < ApplicationController
     render json: categories, include: 'expenses'
   end 
 
+  def expense_by_category
+    current_user = User.find(session[:user_id])
+    cat_expenses = current_user.categories
+    
+    render json: cat_expenses
+
+  end 
+
 
 
 end
