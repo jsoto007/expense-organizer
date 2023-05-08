@@ -9,7 +9,9 @@ import ExpenseForm from "./ExpenseForm";
 
 function App() {
 
-  const [currentUser, setCurrentUser] = useState()
+  const [currentUser, setCurrentUser] = useState({
+    expenses: []
+  })
 
   useEffect(() => {
     fetch('/auth')

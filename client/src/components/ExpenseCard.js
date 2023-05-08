@@ -3,7 +3,6 @@ import Expenses from "./Expenses";
 
 function ExpenseCard( { expense } ) {
 
-console.log('inside the card', expense)
   return (
     <div className="expense-card">
       <h3>{expense.summary}</h3>
