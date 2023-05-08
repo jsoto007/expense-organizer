@@ -4,22 +4,21 @@ import ExpenseCard from "./ExpenseCard";
 
 function Expenses() {
 
-  const [categorizeExpense, setCategorizeExpense] = useState([])
+  const [userExpenses, setUserExpenses] = useState([])
 
   useEffect(()=> {
-    fetch('/categories')
+    fetch('/users')
     .then(resp => resp.json())
-    .then(setCategorizeExpense)
+    .then(setUserExpenses)
   }, [])
-
-  console.log(categorizeExpense)
+console.log("Expense CARD", userExpenses[0])
   return (
     <div>
-      {/* {categorizeExpense.map((expense) => {
+      {userExpenses.map((expense) => {
         return (
-          <ExpenseCard  key={expense.key} categorizeExpense={expense} />
+          <ExpenseCard  key={expense.id} expense={expense} />
         )
-      })} */}
+      })}
     </div>
   )
 }

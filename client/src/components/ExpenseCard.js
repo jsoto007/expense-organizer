@@ -1,20 +1,16 @@
 import React from "react";
 import Expenses from "./Expenses";
 
-function ExpenseCard( { categorizeExpense } ) {
+function ExpenseCard( { expense } ) {
 
-
+console.log('inside the card', expense)
   return (
     <div className="expense-card">
-      <h3 className="category-name">{categorizeExpense.name}</h3>
-      {categorizeExpense.expenses.map((expense) => {
-        return (
-          <ul key={expense.id}>
-            <li>{expense.summary}</li>
-            <li>{expense.amount}</li>
-          </ul>
-        )
-      })}
+      <h3>{expense.summary}</h3>
+      <ul>
+        <li>{expense.description}</li>
+        <li>{expense.amount}</li>
+      </ul>
      
     </div>
   )
