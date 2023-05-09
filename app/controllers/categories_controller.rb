@@ -10,7 +10,7 @@ class CategoriesController < ApplicationController
   def index
     user = User.find_by(id: session[:user_id])
     categories = user.categories.all.distinct
-    render json: categories, include: 'expenses'
+    render json: categories
   end 
 
   def expense_by_category
