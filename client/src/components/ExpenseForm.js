@@ -6,7 +6,7 @@ function ExpenseForm() {
   const [expenseData, setExpenseData] = useState({
     amount: "",
     description: "",
-    category_id: 46
+    category_id: ""
   
   })
 
@@ -38,6 +38,8 @@ function ExpenseForm() {
 
     }
 
+    console.log("Expense form ", expenseData)
+
   return (
     <div>
    <form onSubmit={handleSubmit}>
@@ -59,7 +61,7 @@ function ExpenseForm() {
           placeholder="description"
           className="expense-form"
         />
-      <CategoryMenu />
+      <CategoryMenu  setExpenseData={setExpenseData} expenseData={expenseData}/>
       <button type="submit">Add Expense</button>
     </form>
     </div>

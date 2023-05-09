@@ -1,20 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-function CategoryMenu() {
+function CategoryMenu( {  setExpenseData, expenseData } ) {
 
   const [selectedCategory, setSelectedCategory] = useState([])
 
+  useEffect(()=> {
+    fetch('/categories')
+    .then(resp => {
+      if (resp.ok) {
+        resp.json().then(cats => setSelectedCategory(cats))
+      }
+    })
+  }, [])
 
   function handleSelect(e) {
-    console.log(e.target.value)
+    setExpenseData({
+      ...expenseData, 
+      category_id: e.target.value
+    })
   }
 
   return (
     <div className="category-menu">
           <select name="categories" id="categories" onChange={handleSelect}>
-          <option value="23">Transportation</option>
-          <option value="22">Food</option>
-          <option value="65">Other</option>
+            <option>Please Select A Category</option>
+            {selectedCategory.map((cat)=> {
+              return (
+                <option key={cat.id} value={cat.id}>{cat.name}</option>
+              )
+            })}
           </select>
     </div>
   )

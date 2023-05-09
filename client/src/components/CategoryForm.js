@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 function CategoryForm() {
   const [categoryData, setCategoryData] = useState({
-    name: "AirPlaanes dfd",
+    name: "Other",
     description: "This is it for now",
   
   })
