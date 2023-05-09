@@ -5,7 +5,7 @@ import ExpenseCard from "./ExpenseCard";
 function Expenses( { currentUser } ) {
 
   return (
-    <div>
+    <div className="expense-card">
       {currentUser.expenses.map((expense) => {
         return (
           <ExpenseCard  key={expense.id} expense={expense} />

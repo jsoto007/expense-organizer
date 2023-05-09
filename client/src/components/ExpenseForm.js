@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory }  from "react-router-dom"
+import CategoryMenu from "./CategoryMenu";
 
 function ExpenseForm() {
   const [expenseData, setExpenseData] = useState({
@@ -8,6 +9,8 @@ function ExpenseForm() {
     category_id: 46
   
   })
+
+  
   let history = useHistory();
 
     function handleSubmit(e) {
@@ -34,6 +37,10 @@ function ExpenseForm() {
       })
 
     }
+
+    function handleToggleMenu() {
+      
+    }
  
   return (
     <div>
@@ -56,6 +63,8 @@ function ExpenseForm() {
           placeholder="description"
           className="expense-form"
         />
+        <button onClick={handleToggleMenu}>Place holder</button>
+      <CategoryMenu />
       <button type="submit">Add Expense</button>
     </form>
     </div>

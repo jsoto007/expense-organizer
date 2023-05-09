@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+// import { UserContext } from "../context/UserContextProvider";
 
 
 function Navbar( { onLogout } ) {
 
+// const currentUser  = useContext(UserContext)
+
+// console.log("from NAV", currentUser)
 
   function handleLogout() {
     fetch("/logout", {
@@ -23,6 +27,13 @@ function Navbar( { onLogout } ) {
           >
             Expenses
           </NavLink>
+          <NavLink
+            className="nav-link"
+            to="/expenses"
+            exact
+            >
+              Categories
+            </NavLink>
           <NavLink
             className="nav-link"
             to="/add-expenses"

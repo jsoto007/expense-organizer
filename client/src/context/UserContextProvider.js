@@ -1,14 +1,20 @@
-import React, { createContext, useContext, useState } from "react"
+import React, { useState, useEffect } from "react"
 
-const UserContext = createContext({
-  currentUser: {}, 
-  setCurrentUser: () => {}
-});
+const UserContext = React.createContext();
 
-export default function UserContextProvider( { children } ) {
+function UserContextProvider( { children } ) {
   const [currentUser, setCurrentUser] = useState({
     expenses: []
   })
+
+  useEffect(() => {
+    fetch('/auth')
+    .then(resp => {
+      if (resp.ok){
+        resp.json().then(user => setCurrentUser(user))
+      }
+    })
+  }, [])
 
 return (
   <UserContext.provider value={{currentUser, setCurrentUser}}>
@@ -18,12 +24,6 @@ return (
 
 }
 
-
-export const useUserContext = () => {
-  
-  return useContext(UserContext)
-
-}
-
+export { UserContext, UserContextProvider };
 
 

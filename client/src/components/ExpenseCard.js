@@ -4,11 +4,11 @@ import Expenses from "./Expenses";
 function ExpenseCard( { expense } ) {
 
   return (
-    <div className="expense-card">
+    <div>
       <h3>{expense.summary}</h3>
-      <ul>
-        <li>{expense.description}</li>
-        <li>{expense.amount}</li>
+      <ul className="expenses-li">
+        <li><b>Description | </b>{expense.description}</li>
+        <li><b>Amount | </b>{expense.amount}</li>
       </ul>
      
     </div>
