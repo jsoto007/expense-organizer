@@ -26,8 +26,6 @@ function App() {
 
   if(!currentUser) return <Auth onLogin={setCurrentUser} />
 
-
-
   return (
     <div className="App">
      The current user is:  {currentUser.username}
