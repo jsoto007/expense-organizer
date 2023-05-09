@@ -5,7 +5,7 @@ const UserContext = createContext({
   setCurrentUser: () => {}
 });
 
-function UserContextProvider( { children } ) {
+export default function UserContextProvider( { children } ) {
   const [currentUser, setCurrentUser] = useState({
     expenses: []
   })
@@ -18,11 +18,10 @@ return (
 
 }
 
-export default UserContextProvider() 
 
 export const useUserContext = () => {
   
-  return userContext(UserContext)
+  return useContext(UserContext)
 
 }
 
