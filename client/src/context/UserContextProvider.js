@@ -7,17 +7,26 @@ function UserContextProvider( { children } ) {
     expenses: []
   })
 
-  // useEffect(() => {
-  //   fetch('/users')
-  //   .then(resp => {
-  //     if (resp.ok){
-  //       resp.json().then(user => setCurrentUser(user))
-  //     }
-  //   })
-  // }, [])
+  useEffect(() => {
+    fetch('/auth')
+    .then(resp => {
+      if (resp.ok){
+        resp.json().then(user => setCurrentUser(user))
+      }
+    })
+  }, [])
+
+  function handleLogout() {
+    fetch("/logout", {
+      method: 'DELETE', 
+    })
+    .then(()=> setCurrentUser({
+      expenses: []
+    }))
+  }
 
 return (
-  <UserContext.Provider value={{currentUser, setCurrentUser}}>
+  <UserContext.Provider value={{currentUser, setCurrentUser, handleLogout}}>
       { children }
   </UserContext.Provider>
 )
