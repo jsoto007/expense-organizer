@@ -38,10 +38,6 @@ function ExpenseForm() {
 
     }
 
-    function handleToggleMenu() {
-      
-    }
- 
   return (
     <div>
    <form onSubmit={handleSubmit}>
@@ -63,7 +59,6 @@ function ExpenseForm() {
           placeholder="description"
           className="expense-form"
         />
-        <button onClick={handleToggleMenu}>Place holder</button>
       <CategoryMenu />
       <button type="submit">Add Expense</button>
     </form>
