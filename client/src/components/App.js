@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import Auth from "./Auth";
 import Expenses from "./Expenses";
 import CategoryForm from "./CategoryForm";
-
+import { UserContextProvider } from "../context/UserContextProvider";
 import ExpenseForm from "./ExpenseForm";
 
 function App() {
@@ -22,24 +22,25 @@ function App() {
     })
   }, [])
 
-  console.log("Current User", currentUser)
+  // console.log("Current User", currentUser)
 
   if(!currentUser) return <Auth onLogin={setCurrentUser} />
 
   return (
     <div className="App">
-     The current user is:  {currentUser.username}
-     <CategoryForm />
-     <Navbar onLogout={setCurrentUser} />
-     <Switch>
-      <Route exact path="/">
-        <Expenses currentUser={currentUser} />
-      </Route>
-      <Route exact path="/add-expenses">
-        <ExpenseForm />
-      </Route>
-      
-     </Switch>
+      <UserContextProvider>
+      The current user is:  {currentUser.username}
+      <CategoryForm />
+      <Navbar onLogout={setCurrentUser} />
+      <Switch>
+        <Route exact path="/">
+          <Expenses currentUser={currentUser} />
+        </Route>
+        <Route exact path="/add-expenses">
+          <ExpenseForm />
+        </Route>
+      </Switch>
+      </UserContextProvider>
     </div>
   );
 }

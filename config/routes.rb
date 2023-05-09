@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users, only:[:show, :create, :index]
-  resources :expenses, only:[:show, :create]
+  resources :expenses, only:[:show, :create, :index]
   resources :categories, only:[:index, :create]
   get "/expense_by_category", to: "categories#expense_by_category"
   get "/auth", to: "users#show"

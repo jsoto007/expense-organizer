@@ -7,23 +7,23 @@ function UserContextProvider( { children } ) {
     expenses: []
   })
 
-  useEffect(() => {
-    fetch('/auth')
-    .then(resp => {
-      if (resp.ok){
-        resp.json().then(user => setCurrentUser(user))
-      }
-    })
-  }, [])
+  // useEffect(() => {
+  //   fetch('/users')
+  //   .then(resp => {
+  //     if (resp.ok){
+  //       resp.json().then(user => setCurrentUser(user))
+  //     }
+  //   })
+  // }, [])
 
 return (
-  <UserContext.provider value={{currentUser, setCurrentUser}}>
+  <UserContext.Provider value={{currentUser, setCurrentUser}}>
       { children }
-  </UserContext.provider>
+  </UserContext.Provider>
 )
 
 }
 
-export { UserContext, UserContextProvider };
+export { UserContext, UserContextProvider};
 
 

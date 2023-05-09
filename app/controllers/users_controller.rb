@@ -14,8 +14,8 @@ class UsersController < ApplicationController
   
   def index
     current_user = User.find(session[:user_id])
-    user_expenses = current_user.expenses.all
-    render json: user_expenses
+    # user_expenses = current_user.expenses.all
+    render json: current_user
   end
 
   private
