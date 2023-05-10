@@ -1,15 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { UserContext } from "../context/UserContextProvider";
 
 
-function Signup( { onLogin } ) {
+function Signup() {
 
-  
+  const { setCurrentUser } = useContext(UserContext)
   const [signupData, setSignupData] = useState({
     username: "",
     password: ""
   })
 
-  function handleSubmit(e) {
+  function handleSignup(e) {
       e.preventDefault();
     fetch(`/users`, {
       method: "POST",
@@ -18,7 +19,7 @@ function Signup( { onLogin } ) {
     })
     .then(resp => {
       if(resp.ok){
-        resp.json().then(onLogin)
+        resp.json().then(setCurrentUser)
       }
     })
   }
@@ -34,7 +35,7 @@ function Signup( { onLogin } ) {
 
   return (
     <div className="login-page">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSignup}>
         <input
           type="text"
           name="username"
