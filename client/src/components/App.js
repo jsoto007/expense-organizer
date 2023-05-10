@@ -4,9 +4,7 @@ import Navbar from "./Navbar";
 import Expenses from "./Expenses";
 import CategoryForm from "./CategoryForm";
 import ExpenseForm from "./ExpenseForm";
-import Auth from "./Auth";
-
-
+import Auth from "./Auth"
 import { UserContext } from "../context/UserContextProvider";
 
 
@@ -14,8 +12,8 @@ function App() {
 
   const {currentUser}  = useContext(UserContext);
 
- console.log("current User", currentUser)
-
+ console.log("current User", currentUser.id)
+if (!currentUser.id) return <Auth />
   return (
     <div className="App">
       <CategoryForm />
