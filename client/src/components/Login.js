@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-
+import React, { useState, useContext } from "react";
+import { UserContext } from "../context/UserContextProvider";
 
 
 function Login( { onLogin } ) {
+
+  const { setCurrentUser }  = useContext(UserContext);
 
   const [loginData, setLoginData] = useState({
     username: "", 
@@ -17,7 +19,7 @@ function Login( { onLogin } ) {
   })
   .then(resp => {
     if(resp.ok){
-      resp.json().then(onLogin)
+      resp.json().then(setCurrentUser)
     }
   })
 }

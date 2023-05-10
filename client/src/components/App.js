@@ -1,30 +1,35 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import {Route, Switch } from "react-router-dom"
 import Navbar from "./Navbar";
-import Auth from "./Auth";
 import Expenses from "./Expenses";
 import CategoryForm from "./CategoryForm";
-import { UserContextProvider, UserContext } from "../context/UserContextProvider";
-
 import ExpenseForm from "./ExpenseForm";
+import Auth from "./Auth";
+
+
+import { UserContext } from "../context/UserContextProvider";
 
 
 function App() {
 
+  const {currentUser}  = useContext(UserContext);
+
+ console.log("current User", currentUser)
+
   return (
     <div className="App">
-      <UserContextProvider>
       <CategoryForm />
       <Navbar />
       <Switch>
         <Route exact path="/">
+        </Route>
+        <Route exact path="/expenses">
           <Expenses />
         </Route>
         <Route exact path="/add-expenses">
           <ExpenseForm />
         </Route>
       </Switch>
-      </UserContextProvider>
     </div>
   );
 }
