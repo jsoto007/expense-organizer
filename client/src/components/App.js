@@ -12,8 +12,8 @@ function App() {
 
   const {currentUser}  = useContext(UserContext);
 
- console.log("current User", currentUser.id)
-if (!currentUser.id) return <Auth />
+  if (!currentUser.id) return <Auth />
+  
   return (
     <div className="App">
       <CategoryForm />
