@@ -2,25 +2,19 @@ import React, { useState, useContext } from "react";
 import { useHistory }  from "react-router-dom"
 import CategoryMenu from "./CategoryMenu";
 import { UserContext } from "../context/UserContextProvider";
+import { ExpenseContext } from "../context/ExpenseContextProvider";
 
 function ExpenseForm() {
 
-  const { setCurrentUser, currentUser }  = useContext(UserContext);
+  const { expenseData, setExpenseData }  = useContext(ExpenseContext);
 
-  const [expenseData, setExpenseData] = useState({
+  const [expenseForm, setExpenseForm] = useState({
     amount: "",
     description: "",
     category_id: ""
   
   })
 
-  function handleAddExpense(newExpense) {
-    setCurrentUser([
-  {...currentUser, newExpense}
-    ])
-  }
-
-console.log("curretn User", currentUser)
   
   let history = useHistory();
 
@@ -30,7 +24,7 @@ console.log("curretn User", currentUser)
       fetch(`/expenses`, {
         method: "POST", 
         headers: {'Content-Type': 'application/json'},
-        body:JSON.stringify(expenseData)
+        body:JSON.stringify(expenseForm)
       })
       .then(resp => {
         if (resp.ok){
@@ -40,16 +34,20 @@ console.log("curretn User", currentUser)
       })
     }
 
+    console.log("expenseData", expenseData)
+
+    
+    function handleAddExpense(newExpense) {
+      setExpenseData([...expenseData, newExpense])
+    }
+    
     function handleChange(e) {
       const key = e.target.name;
-      setExpenseData({
-        ...expenseData, 
+      setExpenseForm({
+        ...expenseForm, 
         [key]: e.target.value
       })
-
     }
-
-    console.log("Expense form ", expenseData)
 
   return (
     <div>
@@ -57,7 +55,7 @@ console.log("curretn User", currentUser)
         <input
           type="integer"
           name="amount"
-          value={expenseData.amount}
+          value={expenseForm.amount}
           id="amount1"
           onChange={handleChange}
           placeholder="amount"
@@ -66,13 +64,13 @@ console.log("curretn User", currentUser)
         <input
           type="text"
           name="description"
-          value={expenseData.description}
+          value={expenseForm.description}
           id="description1"
           onChange={handleChange}
           placeholder="description"
           className="expense-form"
         />
-      <CategoryMenu  setExpenseData={setExpenseData} expenseData={expenseData}/>
+      <CategoryMenu  setExpenseForm={setExpenseForm} expenseForm={expenseForm}/>
       <button type="submit">Add Expense</button>
     </form>
     </div>

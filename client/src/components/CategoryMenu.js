@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-function CategoryMenu( {  setExpenseData, expenseData } ) {
+function CategoryMenu( {  setExpenseForm, expenseForm } ) {
 
   const [selectedCategory, setSelectedCategory] = useState([])
 
@@ -14,8 +14,8 @@ function CategoryMenu( {  setExpenseData, expenseData } ) {
   }, [])
 
   function handleSelect(e) {
-    setExpenseData({
-      ...expenseData, 
+    setExpenseForm({
+      ...expenseForm, 
       category_id: e.target.value
     })
   }
