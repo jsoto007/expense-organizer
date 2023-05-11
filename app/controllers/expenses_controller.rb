@@ -20,18 +20,31 @@ class ExpensesController < ApplicationController
 
   def update
     expense = Expense.find_by(id: params[:id])
-    updated_expense = expense.update(
+
+    if expense
+      expense.update(
       description: params[:description],
       amount: params[:amount],
       category_id: params[:category_id]
     )
-    render json: updated_expense
+      render json: expense, status: :accepted
+    else
+      render json: {error: "production not found"}, status: :not_found
+    end
+   
+      
   end 
 
   def destroy
     expense = Expense.find_by(id: params[:id])
     expense.destroy
   end 
+
+  private
+
+    def expense_params
+      params.permit(:description, :category_id, :amount)
+    end 
 
 
 end
