@@ -12,26 +12,27 @@ function Login( { onLogin } ) {
   })
   function handleSubmit(e) {
     e.preventDefault();
-  fetch(`/login`, {
-    method: "POST",
-    headers: {'Content-Type': 'application/json'},
-    body:JSON.stringify(loginData)
-  })
-  .then(resp => {
-    if(resp.ok){
-      resp.json().then(setCurrentUser)
-    }
-  })
-}
+    
+    fetch(`/login`, {
+      method: "POST",
+      headers: {'Content-Type': 'application/json'},
+      body:JSON.stringify(loginData)
+    })
+    .then(resp => {
+      if(resp.ok){
+        resp.json().then(setCurrentUser)
+      }
+    })
+  }
 
 
-function handleChange(e) {
-  const key = e.target.id
-  setLoginData({
-    ...loginData, 
-    [key]: e.target.value
-  })
-}
+  function handleChange(e) {
+    const key = e.target.id
+    setLoginData({
+      ...loginData, 
+      [key]: e.target.value
+    })
+  }
 
 return (
   <div className="login-page">

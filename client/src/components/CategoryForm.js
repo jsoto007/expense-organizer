@@ -4,7 +4,6 @@ function CategoryForm() {
   const [categoryData, setCategoryData] = useState({
     name: "Other",
     description: "This is it for now",
-  
   })
 
     function handleSubmit(e) {

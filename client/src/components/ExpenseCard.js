@@ -1,5 +1,5 @@
 import React from "react";
-import Expenses from "./Expenses";
+import DeleteExpense from "./DeleteExpense";
 
 function ExpenseCard( { expense } ) {
 
@@ -11,6 +11,7 @@ function ExpenseCard( { expense } ) {
         <li><b>Amount | </b>{expense.amount}</li>
         <li id="category-li"><b>Category | </b>{expense.category.name}</li>
       </ul>
+      <DeleteExpense expense={expense} />
      
     </div>
   )

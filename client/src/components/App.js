@@ -7,8 +7,6 @@ import CategoryForm from "./CategoryForm";
 import ExpenseForm from "./ExpenseForm";
 import Auth from "./Auth"
 
-
-
 function App() {
 
   const {currentUser}  = useContext(UserContext);

@@ -12,7 +12,6 @@ function ExpenseForm() {
     amount: "",
     description: "",
     category_id: ""
-  
   })
 
   
@@ -34,9 +33,6 @@ function ExpenseForm() {
       })
     }
 
-    console.log("expenseData", expenseData)
-
-    
     function handleAddExpense(newExpense) {
       setExpenseData([...expenseData, newExpense])
     }

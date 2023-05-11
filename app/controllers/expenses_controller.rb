@@ -18,5 +18,10 @@ class ExpensesController < ApplicationController
 
   end
 
+  def destroy
+    expense = Expense.find_by(id: params[:id])
+    expense.destroy
+  end 
+
 
 end

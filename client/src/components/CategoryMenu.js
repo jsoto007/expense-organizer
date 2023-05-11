@@ -22,14 +22,14 @@ function CategoryMenu( {  setExpenseForm, expenseForm } ) {
 
   return (
     <div className="category-menu">
-          <select name="categories" id="categories" onChange={handleSelect}>
-            <option>Please Select A Category</option>
-            {selectedCategory.map((cat)=> {
-              return (
-                <option key={cat.id} value={cat.id}>{cat.name}</option>
-              )
-            })}
-          </select>
+      <select name="categories" id="categories" onChange={handleSelect}>
+        <option>Please Select A Category</option>
+          {selectedCategory.map((cat)=> {
+            return (
+              <option key={cat.id} value={cat.id}>{cat.name}</option>
+            )
+        })}
+      </select>
     </div>
   )
 }

@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { UserContext } from "../context/UserContextProvider";
 
-
 function Signup() {
 
   const { setCurrentUser } = useContext(UserContext)
