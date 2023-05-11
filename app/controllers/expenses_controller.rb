@@ -18,6 +18,16 @@ class ExpensesController < ApplicationController
 
   end
 
+  def update
+    expense = Expense.find_by(id: params[:id])
+    updated_expense = expense.update(
+      description: params[:description],
+      amount: params[:amount],
+      category_id: params[:category_id]
+    )
+    render json: updated_expense
+  end 
+
   def destroy
     expense = Expense.find_by(id: params[:id])
     expense.destroy
