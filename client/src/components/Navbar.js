@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../context/UserContextProvider";
+import { ExpenseContext } from "../context/ExpenseContextProvider";
 
 
 function Navbar( { onLogout } ) {
 
 const {currentUser, handleLogout}  = useContext(UserContext);
 
+const { expenseData }  = useContext(ExpenseContext);
+
+console.log("EXPENSE", expenseData)
   return (
     <div className="nav-div">
       Current User: {currentUser.username}
@@ -21,7 +25,7 @@ const {currentUser, handleLogout}  = useContext(UserContext);
           </NavLink>
           <NavLink
             className="nav-link"
-            to="/"
+            to="/categories"
             exact
             >
               Categories

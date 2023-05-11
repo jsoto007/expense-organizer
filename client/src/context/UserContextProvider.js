@@ -16,7 +16,6 @@ function UserContextProvider( { children } ) {
     })
   }, [])
 
-
   function handleLogout() {
     fetch("/logout", {
       method: 'DELETE', 

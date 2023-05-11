@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
 import {Route, Switch } from "react-router-dom"
+import { UserContext } from "../context/UserContextProvider";
 import Navbar from "./Navbar";
 import Expenses from "./Expenses";
 import CategoryForm from "./CategoryForm";
 import ExpenseForm from "./ExpenseForm";
 import Auth from "./Auth"
-import { UserContext } from "../context/UserContextProvider";
+
 
 
 function App() {
@@ -16,10 +17,10 @@ function App() {
   
   return (
     <div className="App">
-      <CategoryForm />
       <Navbar />
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/categories">
+          <CategoryForm />
         </Route>
         <Route exact path="/expenses">
           <Expenses />
