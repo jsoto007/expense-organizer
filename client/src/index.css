@@ -41,6 +41,10 @@ code {
 
 }
 
+#category-li {
+  font-size: small;
+}
+
 .expenses-li {
   text-align: left;
   font-weight:lighter
