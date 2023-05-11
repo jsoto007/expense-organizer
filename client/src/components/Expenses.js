@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import ExpenseCard from "./ExpenseCard";
-import { UserContext } from "../context/UserContextProvider";
+import { ExpenseContext } from "../context/ExpenseContextProvider";
 
 function Expenses() {
 
-  const {currentUser} = useContext(UserContext)
+  const {expenseData} = useContext(ExpenseContext)
 
   return (
     <div className="expense-card">
-      {currentUser.expenses.map((expense) => {
+      {expenseData.map((expense) => {
         return (
           <ExpenseCard  key={expense.id} expense={expense} />
         )
