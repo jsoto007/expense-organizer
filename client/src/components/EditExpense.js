@@ -26,9 +26,8 @@ function EditExpense( { expense } ) {
       body: JSON.stringify(patchedExpense),
     })
     .then((resp) => resp.json())
-    .then((editedExpense) => console.log("the response", editedExpense))
+    .then((editedExpense) => handlePatchedCategory(editedExpense))
   }
-  console.log(patchedExpense)
 
   function handleChange(e) {
     const key = e.target.id
@@ -37,6 +36,12 @@ function EditExpense( { expense } ) {
       [key]: e.target.value
     })
   }
+
+  function handlePatchedCategory(editedExpense) {
+    const updateExpenses = expenseData.filter((expense) => expense.id !== editedExpense.id)
+    setExpenseData([editedExpense, ...updateExpenses])
+  }
+
   return (
     <div>
       <form onSubmit={handlePatchSumit} >

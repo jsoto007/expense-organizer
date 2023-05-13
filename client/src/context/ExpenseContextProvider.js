@@ -15,8 +15,6 @@ function ExpenseContextProvider ( { children } ) {
       }
     })
   }, [])
-  
-  console.log("EXPENSE", expenseData);
    
   return (
     <ExpenseContext.Provider value={{expenseData, setExpenseData}}>

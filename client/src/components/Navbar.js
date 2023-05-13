@@ -10,7 +10,6 @@ const {currentUser, handleLogout}  = useContext(UserContext);
 
 const { expenseData }  = useContext(ExpenseContext);
 
-console.log("EXPENSE", expenseData)
   return (
     <div className="nav-div">
       Current User: {currentUser.username}
