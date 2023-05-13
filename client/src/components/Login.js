@@ -12,7 +12,7 @@ function Login( { onLogin } ) {
   })
   function handleSubmit(e) {
     e.preventDefault();
-    
+
     fetch(`/login`, {
       method: "POST",
       headers: {'Content-Type': 'application/json'},
@@ -23,6 +23,7 @@ function Login( { onLogin } ) {
         resp.json().then(setCurrentUser)
       }
     })
+    
   }
 
 

@@ -6,6 +6,7 @@ import Expenses from "./Expenses";
 import CategoryForm from "./CategoryForm";
 import ExpenseForm from "./ExpenseForm";
 import Auth from "./Auth"
+import Categories from "./Categories";
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/categories">
-          <CategoryForm />
+          <Categories />
         </Route>
         <Route exact path="/expenses">
           <Expenses />

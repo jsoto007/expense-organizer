@@ -5,7 +5,8 @@ import { ExpenseContext } from "../context/ExpenseContextProvider";
 function Expenses() {
 
   const {expenseData} = useContext(ExpenseContext)
-
+ 
+ 
   return (
     <div className="expense-card">
       {expenseData.map((expense) => {

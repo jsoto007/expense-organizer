@@ -1,14 +1,11 @@
 import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { UserContext } from "../context/UserContextProvider";
-import { ExpenseContext } from "../context/ExpenseContextProvider";
 
 
 function Navbar( { onLogout } ) {
 
 const {currentUser, handleLogout}  = useContext(UserContext);
-
-const { expenseData }  = useContext(ExpenseContext);
 
   return (
     <div className="nav-div">
@@ -20,21 +17,21 @@ const { expenseData }  = useContext(ExpenseContext);
           to="/expenses"
           exact
           >
-            Expenses
+            <button>Expenses</button>
           </NavLink>
           <NavLink
             className="nav-link"
             to="/categories"
             exact
             >
-              Categories
+              <button>Categories</button>
             </NavLink>
           <NavLink
             className="nav-link"
             to="/add-expenses"
             exact
             >
-              Add Expense
+              <button>Add Expense</button>
             </NavLink>
       </nav>
     </div>
