@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   
   def index
     current_user = User.find(session[:user_id])
-    # user_expenses = current_user.expenses.all
+    user_expenses = current_user.categories.distinct
     render json: current_user
   end
 
