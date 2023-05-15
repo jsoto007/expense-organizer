@@ -1,7 +1,8 @@
 import React, { useState, useContext } from "react";
 import { ExpenseContext } from "../context/ExpenseContextProvider";
 
-function EditExpense( { expense } ) {
+
+function EditExpense( { expense, toggleEdit, setToggleEdit } ) {
 
   const {expenseData, setExpenseData} = useContext(ExpenseContext);
 
@@ -27,6 +28,7 @@ function EditExpense( { expense } ) {
     })
     .then((resp) => resp.json())
     .then((editedExpense) => handlePatchedCategory(editedExpense))
+    setToggleEdit((toggleEdit) => !toggleEdit)
   }
 
   function handleChange(e) {

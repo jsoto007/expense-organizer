@@ -21,7 +21,7 @@ function DeleteExpense( { expense } ) {
   }
 
   return (
-    <button onClick={handleDeleteClick}> X</button>
+    <button className="delete-btn" onClick={handleDeleteClick}> 🗑️</button>
   )
 }
 

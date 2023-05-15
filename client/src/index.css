@@ -100,6 +100,10 @@ code {
   margin-left: 10px;
 }
 
+.delete-btn {
+  margin-right: 8px;
+}
+
 #nav-bar {
   background-color: #FDFDFD;
   padding: 10px;
@@ -203,13 +207,13 @@ nav a.active {
 }
 
 button {
-  font-size: x-large;
+  font-size: large;
   justify-content: center;
   border: none;
   border-radius: 10px;
   cursor: pointer;
   font-family: 'Times New Roman', Times, serif;
-  background-color: #BED2C4;
+  /* background-color: #BED2C4; */
 
 }
 

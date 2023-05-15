@@ -4,6 +4,7 @@ function CategoryMenu( {  setExpenseForm, expenseForm } ) {
 
   const [selectedCategory, setSelectedCategory] = useState([])
 
+  
   useEffect(()=> {
     fetch('/categories')
     .then(resp => {

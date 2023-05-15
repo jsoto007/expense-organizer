@@ -7,7 +7,7 @@ function UserContextProvider( { children } ) {
   const [currentUser, setCurrentUser] = useState({
     expenses: []
   })
-
+console.log(currentUser)
   useEffect(() => {
     fetch('/auth')
     .then(resp => {

@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   #not using this GET to be deleted if not
   get "/expense_by_category", to: "categories#expense_by_category"
   get "/auth", to: "users#show"
-  # get "/categories", to: "categories#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   # Routing logic: fallback requests for React Router.

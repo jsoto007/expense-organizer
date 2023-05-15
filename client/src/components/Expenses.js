@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import ExpenseCard from "./ExpenseCard";
 import { ExpenseContext } from "../context/ExpenseContextProvider";
 
+
 function Expenses() {
 
   const {expenseData} = useContext(ExpenseContext)
