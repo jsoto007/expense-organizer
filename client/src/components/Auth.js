@@ -14,6 +14,7 @@ function Auth( { onLogin } ) {
       />
       <div className="landing-page" id="login-signup">
         <Login onLogin={onLogin} />
+        <hr id="login-line"/>
         <Signup onLogin={onLogin} />
       </div>
     </div>

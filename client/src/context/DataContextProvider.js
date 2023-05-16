@@ -7,7 +7,7 @@ function DataContextProvider ( { children } ) {
     expense: []
   })
 
-  const [selectedCategory, setSelectedCategory] = useState([])
+  const [categoryData, setCategoryData] = useState([])
 
   useEffect(()=> {
     fetch('/expenses')
@@ -22,7 +22,7 @@ function DataContextProvider ( { children } ) {
     fetch('/categories')
     .then(resp => {
       if (resp.ok) {
-        resp.json().then(cats => setSelectedCategory(cats))
+        resp.json().then(cats => setCategoryData(cats))
       }
     })
   }, [])
@@ -31,8 +31,8 @@ function DataContextProvider ( { children } ) {
     <DataContext.Provider value={{
       expenseData, 
       setExpenseData,
-      selectedCategory,
-      setSelectedCategory
+      categoryData,
+      setCategoryData
     }}>
       {children}
     </DataContext.Provider>

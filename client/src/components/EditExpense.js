@@ -28,6 +28,7 @@ function EditExpense( { expense, toggleEdit, setToggleEdit } ) {
     })
     .then((resp) => resp.json())
     .then((editedExpense) => handlePatchedCategory(editedExpense))
+    
     setToggleEdit((toggleEdit) => !toggleEdit)
   }
 

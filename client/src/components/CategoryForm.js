@@ -1,30 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { DataContext } from "../context/DataContextProvider";
+
 
 function CategoryForm() {
-  const [categoryData, setCategoryData] = useState({
+  const [categoryDataForm, setCategoryDataForm] = useState({
     name: "",
     description: "",
-
   })
+
+  const {setCategoryData, categoryData} = useContext(DataContext);
 
   function handleSubmit(e) {
     e.preventDefault();
     fetch(`/categories`, {
       method: "POST", 
       headers: {'Content-Type': 'application/json'},
-      body:JSON.stringify(categoryData)
+      body:JSON.stringify(categoryDataForm)
     })
     .then(resp => {
       if (resp.ok){
-        resp.json().then(data => console.log(data))
+        resp.json().then(newCategory => handleAddCategory(newCategory))
       }
+    })
+
+    setCategoryDataForm({
+      name: "",
+      description: ""
     })
   }
 
+  function handleAddCategory(newCategory) {
+    setCategoryData([...categoryData, newCategory])
+  }
+
+
   function handleChange(e) {
     const key = e.target.id
-    setCategoryData({
-      ...categoryData,
+    setCategoryDataForm({
+      ...categoryDataForm,
       [key]: e.target.value
     })
 
@@ -36,7 +49,7 @@ function CategoryForm() {
         <input
             type="text"
             name="name"
-            value={categoryData.name}
+            value={categoryDataForm.name}
             id="name"
             onChange={handleChange}
             placeholder="name"
@@ -45,7 +58,7 @@ function CategoryForm() {
            <input
             type="text"
             name="description"
-            value={categoryData.description}
+            value={categoryDataForm.description}
             id="description"
             onChange={handleChange}
             placeholder="description"

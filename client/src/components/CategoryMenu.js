@@ -1,19 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { DataContext } from "../context/DataContextProvider";
 
 function CategoryMenu( {  setExpenseForm, expenseForm } ) {
-  const {selectedCategory, setSelectedCategory} = useContext(DataContext);
-  // const [selectedCategory, setSelectedCategory] = useState([])
 
-  
-  // useEffect(()=> {
-  //   fetch('/categories')
-  //   .then(resp => {
-  //     if (resp.ok) {
-  //       resp.json().then(cats => setSelectedCategory(cats))
-  //     }
-  //   })
-  // }, [])
+  const {categoryData} = useContext(DataContext);
 
   function handleSelect(e) {
     setExpenseForm({
@@ -24,9 +14,9 @@ function CategoryMenu( {  setExpenseForm, expenseForm } ) {
 
   return (
     <div className="category-menu">
+      Category
       <select name="categories" id="categories" onChange={handleSelect}>
-        <option>Please Select A Category</option>
-          {selectedCategory.map((cat)=> {
+          {categoryData.map((cat)=> {
             return (
               <option key={cat.id} value={cat.id}>{cat.name}</option>
             )

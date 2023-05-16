@@ -104,6 +104,12 @@ code {
   margin-right: 8px;
 }
 
+hr {
+  height: 3px;
+  background-color: black;
+  border: none;
+}
+
 #nav-bar {
   background-color: #FDFDFD;
   padding: 10px;
