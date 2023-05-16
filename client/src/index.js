@@ -5,7 +5,7 @@ import App from './components/App';
 import reportWebVitals from './reportWebVitals';
 import { UserContextProvider } from "./context/UserContextProvider";
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ExpenseContextProvider } from './context/ExpenseContextProvider';
+import { DataContextProvider } from './context/DataContextProvider';
 
 const container = document.getElementById('root')
 
@@ -13,11 +13,11 @@ const root = createRoot(container)
 
 root.render(
   <UserContextProvider>
-    <ExpenseContextProvider>
+    <DataContextProvider>
       <Router>
         <App />
       </Router>
-    </ExpenseContextProvider>
+    </DataContextProvider>
   </UserContextProvider>
 )
 

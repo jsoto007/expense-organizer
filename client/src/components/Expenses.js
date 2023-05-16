@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import ExpenseCard from "./ExpenseCard";
-import { ExpenseContext } from "../context/ExpenseContextProvider";
+import { ExpenseContext } from "../context/DataContextProvider";
 
 
 function Expenses() {

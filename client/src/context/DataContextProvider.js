@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const ExpenseContext = React.createContext();
 
-function ExpenseContextProvider ( { children } ) {
+function DataContextProvider ( { children } ) {
   const [expenseData, setExpenseData] = useState({
     expense: []
   })
@@ -24,4 +24,4 @@ function ExpenseContextProvider ( { children } ) {
 
 }
 
-export {ExpenseContext, ExpenseContextProvider}
+export {ExpenseContext, DataContextProvider}

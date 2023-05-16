@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import { ExpenseContext } from "../context/ExpenseContextProvider";
+import { ExpenseContext } from "../context/DataContextProvider";
 
 
 function DeleteExpense( { expense } ) {
