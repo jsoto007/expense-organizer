@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   resources :users, only:[:show, :create, :index]
   resources :expenses, only:[:show, :create, :index, :destroy, :update]
   resources :categories, only:[:index, :create]
-  #not using this GET to be deleted if not
-  get "/expense_by_category", to: "categories#expense_by_category"
+
   get "/auth", to: "users#show"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"

@@ -7,6 +7,7 @@ function Categories() {
   return (
     <div>
       <CategoryForm />
+      
     </div>
   )
 }
