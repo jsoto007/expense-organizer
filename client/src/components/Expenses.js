@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import ExpenseCard from "./ExpenseCard";
-import { ExpenseContext } from "../context/DataContextProvider";
+import { DataContext } from "../context/DataContextProvider";
 
 
 function Expenses() {
 
-  const {expenseData} = useContext(ExpenseContext)
+  const {expenseData} = useContext(DataContext)
  
  
   return (

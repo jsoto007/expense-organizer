@@ -1,12 +1,11 @@
 import React, { useState, useContext } from "react";
 import { useHistory }  from "react-router-dom"
 import CategoryMenu from "./CategoryMenu";
-import { UserContext } from "../context/UserContextProvider";
-import { ExpenseContext } from "../context/DataContextProvider";
+import { DataContext } from "../context/DataContextProvider";
 
 function ExpenseForm() {
 
-  const { expenseData, setExpenseData }  = useContext(ExpenseContext);
+  const { expenseData, setExpenseData }  = useContext(DataContext);
 
   const [expenseForm, setExpenseForm] = useState({
     amount: "",

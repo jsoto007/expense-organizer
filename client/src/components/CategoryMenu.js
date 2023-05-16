@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
+import { DataContext } from "../context/DataContextProvider";
 
 function CategoryMenu( {  setExpenseForm, expenseForm } ) {
-
-  const [selectedCategory, setSelectedCategory] = useState([])
+  const {selectedCategory, setSelectedCategory} = useContext(DataContext);
+  // const [selectedCategory, setSelectedCategory] = useState([])
 
   
-  useEffect(()=> {
-    fetch('/categories')
-    .then(resp => {
-      if (resp.ok) {
-        resp.json().then(cats => setSelectedCategory(cats))
-      }
-    })
-  }, [])
+  // useEffect(()=> {
+  //   fetch('/categories')
+  //   .then(resp => {
+  //     if (resp.ok) {
+  //       resp.json().then(cats => setSelectedCategory(cats))
+  //     }
+  //   })
+  // }, [])
 
   function handleSelect(e) {
     setExpenseForm({

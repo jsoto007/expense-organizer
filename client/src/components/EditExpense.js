@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import { ExpenseContext } from "../context/DataContextProvider";
+import { DataContext } from "../context/DataContextProvider";
 
 
 function EditExpense( { expense, toggleEdit, setToggleEdit } ) {
 
-  const {expenseData, setExpenseData} = useContext(ExpenseContext);
+  const {expenseData, setExpenseData} = useContext(DataContext);
 
 
   const {id, description, amount, category} = expense
