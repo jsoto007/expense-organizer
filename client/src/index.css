@@ -217,7 +217,7 @@ nav a.active {
   min-height: 400px;
   color: black;
   border-radius: 12px;
-  background-color: #EFEFEF;
+  background-color: #BED2C4; 
   font-family: 'Times New Roman', Times, serif;
 
 }
@@ -229,6 +229,7 @@ button {
   border-radius: 10px;
   cursor: pointer;
   font-family: 'Times New Roman', Times, serif;
+  background-color: #FDFDFD;
   /* background-color: #BED2C4; */
 
 }

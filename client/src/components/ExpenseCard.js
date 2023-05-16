@@ -19,7 +19,7 @@ function ExpenseCard( { expense } ) {
         <ul className="expenses-li">
           <li><b>Description | </b>{expense.description}</li>
           <li><b>Amount | </b>{expense.amount}</li>
-          <li id="category-li"><b>Category | </b>{expense.category.name}</li>
+          <li id="category-li"><b>Category | </b>{expense.category_name}</li>
         </ul>
         <div className="delete-and-edit">
           <DeleteExpense expense={expense} />

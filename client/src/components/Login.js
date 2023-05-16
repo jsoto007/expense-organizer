@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { UserContext } from "../context/UserContextProvider";
 
 
-function Login( { onLogin } ) {
+function Login() {
 
   const { setCurrentUser }  = useContext(UserContext);
 
@@ -11,20 +11,23 @@ function Login( { onLogin } ) {
     password: ""
   })
 
-  function handleSubmit(e) {
-    e.preventDefault();
+  const [errors, setErrors] = useState([])
 
-    fetch(`/login`, {
+ async function handleSubmit(e) {
+    e.preventDefault();
+    const response = await fetch(`/login`, {
       method: "POST",
-      headers: {'Content-Type': 'application/json'},
+      headers: {
+        'Content-Type': 'application/json'
+      },
       body:JSON.stringify(loginData)
-    })
-    .then(resp => {
-      if(resp.ok){
-        resp.json().then(setCurrentUser)
+    });
+    const data = await response.json();
+      if(response.ok){
+        setCurrentUser(data)
+      } else {
+        setErrors(data.error)
       }
-    })
-    
   }
 
   function handleChange(e) {
@@ -34,6 +37,7 @@ function Login( { onLogin } ) {
       [key]: e.target.value
     })
   }
+  console.log(errors.login)
 
 return (
   <div className="login-page">
