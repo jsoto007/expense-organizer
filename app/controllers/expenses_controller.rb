@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
 
+rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
 
   def index
     user = User.find_by(id: session[:user_id])
@@ -20,19 +21,12 @@ class ExpensesController < ApplicationController
 
   def update
     expense = Expense.find_by(id: params[:id])
-
-    if expense
-      expense.update(
+    expense.update(
       description: params[:description],
       amount: params[:amount],
       category_id: params[:category_id]
     )
       render json: expense, status: :accepted
-    else
-      render json: {error: "production not found"}, status: :not_found
-    end
-   
-      
   end 
 
   def destroy
@@ -43,8 +37,12 @@ class ExpensesController < ApplicationController
   private
 
     def expense_params
-      params.permit(:description, :category_id, :amount)
+      params.permit(:description, :category_id, :amount, :session)
     end 
+
+    def render_not_found_response
+      render json: { error: "Expense not Found" }, status: :not_found
+    end
 
 
 end

@@ -10,20 +10,25 @@ function Signup() {
     password: ""
   })
 
-  function handleSignup(e) {
-      e.preventDefault();
-    fetch(`/users`, {
-      method: "POST",
-      headers: {'Content-Type': 'application/json'},
-      body:JSON.stringify(signupData)
-    })
-    .then(resp => {
-      if(resp.ok){
-        resp.json().then(setCurrentUser)
-      }
-    })
-  }
+  const [errors, setErrors] = useState([])
 
+  async function handleSignup(e) {
+      e.preventDefault();
+
+    const response = await fetch(`/users`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify(signupData)
+    });
+    const data = await response.json();
+      if(response.ok){
+        setCurrentUser(data)
+      } else {
+        setErrors(data.errors)
+      }
+  }
 
   function handleChange(e) {
     const key = e.target.name
@@ -54,6 +59,16 @@ function Signup() {
           placeholder="Password"
           className="auth-field"
         />
+
+        {errors.length > 0 && (
+          <ul className='error-messages'>
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+        )}
+
+
         <button type="submit">Create Account</button>
       </form>
     </div>

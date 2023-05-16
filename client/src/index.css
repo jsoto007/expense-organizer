@@ -207,6 +207,11 @@ hr {
   flex-direction:row-reverse
 }
 
+.error-messages {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: red;
+}
+
 nav a.active {
   height: 50 vh;
   min-height: 400px;

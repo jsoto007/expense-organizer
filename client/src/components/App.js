@@ -3,7 +3,6 @@ import {Route, Switch } from "react-router-dom"
 import { UserContext } from "../context/UserContextProvider";
 import Navbar from "./Navbar";
 import Expenses from "./Expenses";
-import CategoryForm from "./CategoryForm";
 import ExpenseForm from "./ExpenseForm";
 import Auth from "./Auth"
 import Categories from "./Categories";
