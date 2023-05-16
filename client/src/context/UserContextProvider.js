@@ -7,12 +7,16 @@ function UserContextProvider( { children } ) {
   const [currentUser, setCurrentUser] = useState({
     expenses: []
   })
-console.log(currentUser)
+
+  const [userErrors, setUserErrors] = useState([])
+
   useEffect(() => {
-    fetch('/auth')
+    fetch('/login')
     .then(resp => {
       if (resp.ok){
         resp.json().then(user => setCurrentUser(user))
+      } else {
+        resp.json().then((errorData) => setUserErrors(errorData.error))
       }
     })
   }, [])
@@ -27,7 +31,12 @@ console.log(currentUser)
   }
 
 return (
-  <UserContext.Provider value={{currentUser, setCurrentUser, handleLogout}}>
+  <UserContext.Provider value={{
+    currentUser, 
+    setCurrentUser, 
+    handleLogout,
+    userErrors
+  }}>
       { children }
   </UserContext.Provider>
 )

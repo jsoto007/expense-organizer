@@ -4,7 +4,7 @@ import { DataContext } from "../context/DataContextProvider";
 function CategoriesCard() {
 
   const {categoryData} = useContext(DataContext)
-  console.log("from CAT card",categoryData)
+  
   return (
     <div>
       {categoryData.map((category) => {
