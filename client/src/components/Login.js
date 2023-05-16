@@ -4,14 +4,13 @@ import { UserContext } from "../context/UserContextProvider";
 
 function Login( { onLogin } ) {
 
-  const { setCurrentUser, userErrors }  = useContext(UserContext);
-
-  console.log(userErrors.login)
+  const { setCurrentUser }  = useContext(UserContext);
 
   const [loginData, setLoginData] = useState({
     username: "", 
     password: ""
   })
+
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -58,17 +57,6 @@ return (
         placeholder="Password"
         className="auth-field"
       />
-        {userErrors? (console.log("from p1", userErrors)) : (console.log("from p2", userErrors))}
-
-        {/* {userErrors.length > 0 && (
-          <ul style={{ color: "red" }}>
-            {userErrors.map((error) => {
-              return console.log(error.login)
-            })}
-         </ul>
-        )} */}
-
-
       <button type="submit">Log In</button>
     </form>
   </div>
