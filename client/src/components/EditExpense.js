@@ -7,13 +7,13 @@ function EditExpense( { expense, toggleEdit, setToggleEdit } ) {
   const {expenseData, setExpenseData} = useContext(DataContext);
 
 
-  const {id, description, amount, category} = expense
+  const {id, description, amount, category_id} = expense
 
   const [patchedExpense, setPatchedExpense] = useState({
     id: `${id}`,
     description: `${description}`,
     amount: `${amount}`, 
-    category_id: `${category.id}`
+    category_id: `${category_id}`
   });
 
   function handlePatchSumit(e) {
@@ -28,7 +28,7 @@ function EditExpense( { expense, toggleEdit, setToggleEdit } ) {
     })
     .then((resp) => resp.json())
     .then((editedExpense) => handlePatchedCategory(editedExpense))
-    
+
     setToggleEdit((toggleEdit) => !toggleEdit)
   }
 

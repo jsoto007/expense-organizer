@@ -5,5 +5,9 @@ class Expense < ApplicationRecord
   def category_name
     self.category.name
   end 
-  
+
+  def category_id
+    self.category.id
+  end 
+
 end
