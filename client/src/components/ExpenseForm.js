@@ -51,6 +51,18 @@ function ExpenseForm() {
   return (
     <div>
    <form onSubmit={handleSubmit}>
+   <label for="description1">Description  </label>
+   <input
+     type="text"
+     name="description"
+     value={expenseForm.description}
+     id="description1"
+     onChange={handleChange}
+     placeholder="description"
+     className="expense-form"
+   />
+   <br></br>
+   <label for="amount1">Amount  </label>
         <input
           type="integer"
           name="amount"
@@ -58,15 +70,6 @@ function ExpenseForm() {
           id="amount1"
           onChange={handleChange}
           placeholder="amount"
-          className="expense-form"
-        />
-        <input
-          type="text"
-          name="description"
-          value={expenseForm.description}
-          id="description1"
-          onChange={handleChange}
-          placeholder="description"
           className="expense-form"
         />
       <CategoryMenu  setExpenseForm={setExpenseForm} expenseForm={expenseForm}/>
