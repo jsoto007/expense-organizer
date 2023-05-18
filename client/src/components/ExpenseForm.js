@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import { useHistory }  from "react-router-dom"
 import CategoryMenu from "./CategoryMenu";
-import { DataContext } from "../context/DataContextProvider";
+import { UserContext } from "../context/UserContextProvider";
 
 function ExpenseForm() {
 
-  const { expenseData, setExpenseData }  = useContext(DataContext);
+  const { currentUser, setCurrentUser} = useContext(UserContext);
 
   const [expenseForm, setExpenseForm] = useState({
     amount: "",
@@ -33,7 +33,11 @@ function ExpenseForm() {
     }
 
     function handleAddExpense(newExpense) {
-      setExpenseData([...expenseData, newExpense])
+      setCurrentUser({
+        ...currentUser,
+         expenses: [newExpense, ...currentUser.expenses] 
+      })
+
     }
     
     function handleChange(e) {
