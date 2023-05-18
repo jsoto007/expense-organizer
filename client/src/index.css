@@ -96,6 +96,10 @@ code {
     font-weight: bold;
     font-size:large;
 }
+
+.edit-expense-form {
+  text-align: left;
+}
 .nav-link {
   margin-left: 10px;
 }

@@ -49,7 +49,8 @@ function EditExpense( { expense, toggleEdit, setToggleEdit } ) {
 
   return (
     <div>
-      <form onSubmit={handlePatchSumit} >
+      <form className="edit-expense-form" onSubmit={handlePatchSumit} >
+      <label for="description">Description | </label>
         <input
           type="text"
           name="description"
@@ -57,6 +58,8 @@ function EditExpense( { expense, toggleEdit, setToggleEdit } ) {
           id="description"
           onChange={handleChange}
           />
+          <br></br>
+          <label for="amount">Amount | </label>
           <input
             type="integer"
             name="amount"
