@@ -5,7 +5,7 @@ import { DataContext } from "../context/DataContextProvider";
 function EditExpense( { expense, toggleEdit, setToggleEdit } ) {
 
   const {expenseData, setExpenseData} = useContext(DataContext);
-
+  
 
   const {id, description, amount, category_id} = expense
 
