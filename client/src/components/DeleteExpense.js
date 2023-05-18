@@ -1,11 +1,11 @@
 import React, {useContext} from "react";
 import { DataContext } from "../context/DataContextProvider";
-
+import { UserContext } from "../context/UserContextProvider"
 
 function DeleteExpense( { expense } ) {
 
   const { expenseData, setExpenseData } = useContext(DataContext)
-
+  const { currentUser, setCurrentUser } = useContext(UserContext)
   const { id } = expense;
   
   function handleDeleteClick() {
@@ -14,10 +14,14 @@ function DeleteExpense( { expense } ) {
     })
     .then(handleDeleteUpdate(expense))
   }
+                console.log("from DELETE", currentUser.expenses)
 
   function handleDeleteUpdate(deletedExpense) {
-    const updateExpenses = expenseData.filter((exp) => exp.id !== deletedExpense.id);
-    setExpenseData(updateExpenses);
+    const updateExpenses = currentUser.expenses.filter((exp) => exp.id !== deletedExpense.id);
+    setCurrentUser({
+      ...currentUser, 
+      expenses: [...updateExpenses]
+    })
   }
 
   return (
