@@ -1,11 +1,12 @@
 import React, { useState, useContext } from "react";
 import { DataContext } from "../context/DataContextProvider";
+import { UserContext } from "../context/UserContextProvider";
 
 
 function EditExpense( { expense, toggleEdit, setToggleEdit } ) {
 
   const {expenseData, setExpenseData} = useContext(DataContext);
-  
+  const {currentUser, setCurrentUser} = useContext(UserContext);
 
   const {id, description, amount, category_id} = expense
 
@@ -41,8 +42,11 @@ function EditExpense( { expense, toggleEdit, setToggleEdit } ) {
   }
 
   function handlePatchedCategory(editedExpense) {
-    const updateExpenses = expenseData.filter((expense) => expense.id !== editedExpense.id)
-    setExpenseData([editedExpense, ...updateExpenses])
+    const updateExpenses = currentUser.expenses.filter((expense) => expense.id !== editedExpense.id)
+    setCurrentUser({
+      ...currentUser, 
+      expenses: [editedExpense, ...updateExpenses]
+    })
   }
 
   return (
