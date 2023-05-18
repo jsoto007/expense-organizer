@@ -37,7 +37,7 @@ function Login() {
       [key]: e.target.value
     })
   }
-  console.log(errors.login)
+  console.log("errors", errors)
 
 return (
   <div className="login-page">
@@ -61,6 +61,22 @@ return (
         placeholder="Password"
         className="auth-field"
       />
+
+      {errors? (
+        <ul className='error-messages' key={errors.login}>
+          <li>{errors.login}</li>
+        </ul>
+      ): 
+      null}
+      
+      {/* {errors.length > 0 && (
+          <ul className='error-messages'>
+            {errors.map((error) => (
+              console.log("inside the map",error)
+              // <li key={error}>{error}</li>
+            ))}
+          </ul>
+        )} */}
       <button type="submit">Log In</button>
     </form>
   </div>

@@ -5,7 +5,7 @@ import UsersCard from "./UsersCard"
 function CategoriesCard() {
 
   const {categoryData} = useContext(DataContext)
-  console.log(categoryData[1].uniq_users)
+  
   return (
     <div>
       {categoryData.map((category) => {

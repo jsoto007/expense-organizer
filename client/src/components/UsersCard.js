@@ -8,7 +8,7 @@ function UsersCard( { uniqUsers } ) {
     <div>
         {uniqUsers.map((user) => {
           return (
-            <ul>
+            <ul key={user.id}>
               <li>{user.username}</li>
             </ul>
           )

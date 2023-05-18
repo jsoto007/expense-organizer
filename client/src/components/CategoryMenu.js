@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { DataContext } from "../context/DataContextProvider";
+import { UserContext } from "../context/UserContextProvider";
 
 function CategoryMenu( {  setExpenseForm, expenseForm } ) {
 
   const {categoryData} = useContext(DataContext);
+  const { currentUser } = useContext(UserContext)
 
   function handleSelect(e) {
     setExpenseForm({
