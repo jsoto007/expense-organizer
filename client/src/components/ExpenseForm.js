@@ -43,43 +43,25 @@ function ExpenseForm() {
       handleAddUserToCategory(newExpense)
     }
     
-    // find the category which was updated ✅
-    // check if the user exist in that category ✅
-    // if so return the category
-    // if not add the new user
     function handleAddUserToCategory(newExpense) {
-      const foundCategory =  categoryData.find((category) => category.id === newExpense.category_id)
+      const updatedCategories = categoryData.map((category) => {
 
-      const foundUser = foundCategory.uniq_users.find((uniqUser) => uniqUser.id === newExpense.user.id)
-      
-      if (!foundUser) return (
-        setCategoryData({
-          ...categoryData,
-          uniq_users: [foundUser, ...foundCategory.uniq_users]
-        })
-      )
-      console.log("foundCategory: ",foundCategory.uniq_users)
-      console.log("FOUND USER : ",foundUser)
-
-    }
-    
-    
-    /*
-    function handleAddTask(newTask) {
-      const updatedCategories = categories.map((cat)=> {
-        if (cat.id === newTask.categorization_id) {
+        if (category.id === newExpense.category_id) {
+          
+          const filteredUsers = category.uniq_users.filter((uniUser) => uniUser.id !== newExpense.user.id)
+          
           return {
-            ...cat, 
-            tasks: [newTask, ...cat.tasks]
+            ...category,
+            uniq_users: [newExpense.user, ...filteredUsers]
           }
         } else {
-          return cat
+          return category
         }
+
       })
-      setCategories(updatedCategories);
+      setCategoryData(updatedCategories)
     }
-    
-    */
+  
 
    function handleChange(e) {
      const key = e.target.name;
