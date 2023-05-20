@@ -62,7 +62,6 @@ function ExpenseForm() {
       setCategoryData(updatedCategories)
     }
   
-
    function handleChange(e) {
      const key = e.target.name;
      setExpenseForm({
