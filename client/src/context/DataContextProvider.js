@@ -7,7 +7,9 @@ function DataContextProvider ( { children } ) {
     expense: []
   })
 
-  const [categoryData, setCategoryData] = useState([])
+  const [categoryData, setCategoryData] = useState({
+    category: []
+  })
 
   useEffect(()=> {
     fetch('/expenses')

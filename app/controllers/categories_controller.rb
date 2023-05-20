@@ -1,8 +1,7 @@
 class CategoriesController < ApplicationController
  
   def create
-    current_user = User.find(session[:user_id])
-    category = current_user.categories.create(name: params[:name], description: params[:description])
+    category = Category.create(name: params[:name], description: params[:description])
     render json: category
   end 
 

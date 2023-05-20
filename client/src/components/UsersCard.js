@@ -2,7 +2,6 @@ import React from "react";
 
 
 function UsersCard( { uniqUsers } ) {
-  console.log('Users from card', uniqUsers )
 
   return (
     <div>

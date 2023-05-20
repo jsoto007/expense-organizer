@@ -1,11 +1,14 @@
 import React, { useState, useContext } from "react";
 import { useHistory }  from "react-router-dom"
-import CategoryMenu from "./CategoryMenu";
 import { UserContext } from "../context/UserContextProvider";
+import { DataContext } from "../context/DataContextProvider";
+
+import CategoryMenu from "./CategoryMenu";
 
 function ExpenseForm() {
 
   const { currentUser, setCurrentUser} = useContext(UserContext);
+  const { categoryData, setCategoryData } = useContext(DataContext)
 
   const [expenseForm, setExpenseForm] = useState({
     amount: "",
@@ -35,18 +38,56 @@ function ExpenseForm() {
     function handleAddExpense(newExpense) {
       setCurrentUser({
         ...currentUser,
-         expenses: [newExpense, ...currentUser.expenses] 
+         expenses: [newExpense, ...currentUser.expenses]
       })
+      handleAddUserToCategory(newExpense)
+    }
+    
+    // find the category which was updated ✅
+    // check if the user exist in that category ✅
+    // if so return the category
+    // if not add the new user
+    function handleAddUserToCategory(newExpense) {
+      const foundCategory =  categoryData.find((category) => category.id === newExpense.category_id)
+
+      const foundUser = foundCategory.uniq_users.find((uniqUser) => uniqUser.id === newExpense.user.id)
+      
+      if (!foundUser) return (
+        setCategoryData({
+          ...categoryData,
+          uniq_users: [foundUser, ...foundCategory.uniq_users]
+        })
+      )
+      console.log("foundCategory: ",foundCategory.uniq_users)
+      console.log("FOUND USER : ",foundUser)
 
     }
     
-    function handleChange(e) {
-      const key = e.target.name;
-      setExpenseForm({
-        ...expenseForm, 
-        [key]: e.target.value
+    
+    /*
+    function handleAddTask(newTask) {
+      const updatedCategories = categories.map((cat)=> {
+        if (cat.id === newTask.categorization_id) {
+          return {
+            ...cat, 
+            tasks: [newTask, ...cat.tasks]
+          }
+        } else {
+          return cat
+        }
       })
+      setCategories(updatedCategories);
     }
+    
+    */
+
+   function handleChange(e) {
+     const key = e.target.name;
+     setExpenseForm({
+       ...expenseForm, 
+       [key]: e.target.value
+     })
+   }
 
   return (
     <div>
