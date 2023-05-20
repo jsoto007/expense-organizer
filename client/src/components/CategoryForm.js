@@ -10,23 +10,28 @@ function CategoryForm() {
 
   const {setCategoryData, categoryData} = useContext(DataContext);
 
-  function handleSubmit(e) {
+  const [errors, setErrors] = useState([])
+
+  async function handleSubmit(e) {
     e.preventDefault();
-    fetch(`/categories`, {
+
+    const response = await fetch(`/categories`, {
       method: "POST", 
       headers: {'Content-Type': 'application/json'},
       body:JSON.stringify(categoryDataForm)
     })
-    .then(resp => {
-      if (resp.ok){
-        resp.json().then(newCategory => handleAddCategory(newCategory))
-      }
-    })
 
-    setCategoryDataForm({
-      name: "",
-      description: ""
-    })
+    const data = await response.json();
+      if (response.ok){
+        handleAddCategory(data)
+        setCategoryDataForm({
+          name: "",
+          description: ""
+        })
+        setErrors([])
+      }  else {
+        setErrors(data.errors)
+      }
   }
 
   function handleAddCategory(newCategory) {
@@ -64,6 +69,14 @@ function CategoryForm() {
             placeholder="description"
             className="category-form"
           />
+
+          {errors.length > 0 && (
+          <ul className='error-messages'>
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+        )}
 
       <button onClick={handleSubmit}>submit</button>
       </form>

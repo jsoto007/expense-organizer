@@ -10,4 +10,8 @@ class Expense < ApplicationRecord
     self.category.id
   end 
 
+  validates :description, presence: true
+  validates :amount, presence: true
+
+
 end

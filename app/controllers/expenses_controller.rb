@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
 
-rescue_from ActiveRecord::RecordNotFound, with: :render_not_found_response
+rescue_from ActiveRecord::RecordInvalid, with: :render_not_found_response
 
   def index
     user = User.find_by(id: session[:user_id])
