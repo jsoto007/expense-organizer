@@ -11,7 +11,6 @@ function Home( { currentUser } ) {
     .then(data => setUserData(data))
   }, [currentUser])
 
-  console.log(userData)
   return (
     <div>
       {userData.map((expense) => {

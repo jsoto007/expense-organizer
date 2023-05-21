@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import Login from "./Login";
 import Signup from "./Signup";
 import appLogo from "../appLogo.png"
 
 
 function Auth( { onLogin } ) {
+
+  const [toggleBtn, setToggleBtn] = useState([])
+
+  function handleToggleEdit() {
+    setToggleBtn((toggleBtn) => !toggleBtn)
+  }
 
   return (
     <div className="landing-page">
@@ -16,7 +22,8 @@ function Auth( { onLogin } ) {
       <div className="landing-page" id="login-signup">
         <Login onLogin={onLogin} />
         <hr id="login-line"/>
-        <Signup onLogin={onLogin} />
+        {toggleBtn ? (<button onClick={handleToggleEdit}> Create an Account </button>) : (<Signup onLogin={onLogin} />)}
+                
       </div>
     </div>
   )
