@@ -76,7 +76,7 @@ function CategoryForm() {
               <li key={error}>{error}</li>
             ))}
           </ul>
-        )}
+         )}
 
       <button onClick={handleSubmit}>submit</button>
       </form>

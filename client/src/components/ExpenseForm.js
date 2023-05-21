@@ -8,31 +8,34 @@ import CategoryMenu from "./CategoryMenu";
 function ExpenseForm() {
 
   const { currentUser, setCurrentUser} = useContext(UserContext);
-  const { categoryData, setCategoryData } = useContext(DataContext)
+  const { categoryData, setCategoryData } = useContext(DataContext);
+
+  const [errors, setErrors] = useState([]);
 
   const [expenseForm, setExpenseForm] = useState({
     amount: "",
     description: "",
     category_id: ""
-  })
+  });
 
-  
   let history = useHistory();
 
-    function handleSubmit(e) {
+   async function handleSubmit(e) {
       e.preventDefault();
 
-      fetch(`/expenses`, {
+      const response = await fetch(`/expenses`, {
         method: "POST", 
         headers: {'Content-Type': 'application/json'},
         body:JSON.stringify(expenseForm)
       })
-      .then(resp => {
-        if (resp.ok){
-          resp.json().then(data => handleAddExpense(data))
-        }
+      const data = await response.json();
+      if (response.ok){
+        handleAddExpense(data)
         history.push('./expenses')
-      })
+      } else {
+        setErrors(data.errors)
+      }
+    
     }
 
     function handleAddExpense(newExpense) {
@@ -45,19 +48,17 @@ function ExpenseForm() {
     
     function handleAddUserToCategory(newExpense) {
       const updatedCategories = categoryData.map((category) => {
-
         if (category.id === newExpense.category_id) {
           
-          const filteredUsers = category.uniq_users.filter((uniUser) => uniUser.id !== newExpense.user.id)
+        const filteredUsers = category.uniq_users.filter((uniUser) => uniUser.id !== newExpense.user.id)
           
-          return {
-            ...category,
-            uniq_users: [newExpense.user, ...filteredUsers]
-          }
+        return {
+          ...category,
+          uniq_users: [newExpense.user, ...filteredUsers]
+        }
         } else {
           return category
         }
-
       })
       setCategoryData(updatedCategories)
     }
@@ -95,6 +96,15 @@ function ExpenseForm() {
           className="expense-form"
         />
       <CategoryMenu  setExpenseForm={setExpenseForm} expenseForm={expenseForm}/>
+
+      {errors.length > 0 && (
+        <ul className='error-messages'>
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
+      )}
+
       <button type="submit">Add Expense</button>
     </form>
     </div>

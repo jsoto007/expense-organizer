@@ -1,6 +1,6 @@
 class ExpensesController < ApplicationController
 
-rescue_from ActiveRecord::RecordInvalid, with: :render_not_found_response
+  rescue_from ActiveRecord::RecordInvalid, with: :render_record_invalid
 
   def index
     user = User.find_by(id: session[:user_id])
@@ -9,7 +9,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_not_found_response
   end 
 
   def create
-    expense = Expense.create(
+    expense = Expense.create!(
       user_id: session[:user_id], 
       description: params[:description], 
       amount: params[:amount], 
@@ -40,9 +40,8 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_not_found_response
       params.permit(:description, :category_id, :amount, :session)
     end 
 
-    def render_not_found_response
-      render json: { error: "Expense not Found" }, status: :not_found
-    end
-
+    def render_record_invalid(e)
+      render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
+    end 
 
 end
