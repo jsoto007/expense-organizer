@@ -17,6 +17,7 @@ function CategoryMenu( {  setExpenseForm, expenseForm } ) {
     <div>
       <label className="expense-label" for="categories" > Categories </label>
       <select name="categories" className="category-menu" id="categories" onChange={handleSelect}>
+        <option>Please Select a Category</option>
           {categoryData.map((cat)=> {
             return (
               <option className="dropdown-menu" key={cat.id} value={cat.id}>{cat.name}</option>
