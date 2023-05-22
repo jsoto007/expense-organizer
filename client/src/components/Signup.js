@@ -68,8 +68,7 @@ function Signup() {
           </ul>
         )}
 
-
-        <button type="submit">Create Account</button>
+        <button className="create-acc-btn" type="submit"> Create Account </button>
       </form>
     </div>
   )

@@ -124,13 +124,15 @@ hr {
 
 .auth-field {
   display: flex;
+  border:none;
   flex-direction: column;
   font-family: 'Times New Roman', Times, serif;
-  border-radius: 10px;
+  border-radius: 26px;
   font-size: 17px;
   padding: 14px 16px;
   width: 330px;
   background-color: #EFEFEF;
+  margin-bottom: 10px;
 }
 
 .column {
@@ -215,6 +217,38 @@ hr {
   font-family: Georgia, 'Times New Roman', Times, serif;
   color: red;
 }
+
+.login-btn {
+  font-size:x-large;
+  justify-content: center;
+  border: none;
+  border-radius: 26px;
+  cursor: pointer;
+  margin-left: 18%;
+  margin-bottom: 7px;
+  padding: 8px;
+  padding-left: 80px;
+  padding-right: 80px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #BED2C4;
+}
+
+.create-acc-btn {
+  font-size:x-large;
+  justify-content: center;
+  border: none;
+  border-radius: 26px;
+  cursor: pointer;
+  margin-left: 17%;
+  margin-top: 7px;
+  padding: 8px;
+
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #D0E3CD;
+}
+
 
 nav a.active {
   height: 50 vh;

@@ -22,7 +22,7 @@ function Auth( { onLogin } ) {
       <div className="landing-page" id="login-signup">
         <Login onLogin={onLogin} />
         <hr id="login-line"/>
-        {toggleBtn ? (<button onClick={handleToggleEdit}> Create an Account </button>) : (<Signup onLogin={onLogin} />)}
+        {toggleBtn ? (<button className="create-acc-btn" onClick={handleToggleEdit}> Create an Account </button>) : (<Signup onLogin={onLogin} />)}
                 
       </div>
     </div>
