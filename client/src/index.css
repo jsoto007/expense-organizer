@@ -34,17 +34,23 @@ code {
   margin-left: 10%;
 }
 
+
 #logout-btn {
   float: right;
   padding: 2px;
   background-color: #FDFDFD;
   margin-right: 50px;
-  margin-top: 28px;
+  margin-top: 12px;
 
 }
 
+.current-user {
+  margin-left: 20px;
+  font-weight: 600;
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .expense-form {
-  /* display: flex; */
   border:none;
   flex-direction: column;
   font-family: 'Times New Roman', Times, serif;
@@ -99,24 +105,7 @@ code {
   text-align: center;
   padding: 9px;
 }
-/* This will be used for the catorized expense
 
-.expense-card {
-  float: left;
-    width: 20%;
-    padding: 25px;
-    font-size: small;
-    background-color: white;
-    border-radius: 30px;
-    margin: 5px;
-    margin-top: 20px;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: bold;
-    font-size:large;
-}
-
-*/
 .expense-card {
   float: left;
     width: 49%;

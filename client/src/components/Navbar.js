@@ -9,7 +9,7 @@ const {currentUser, handleLogout}  = useContext(UserContext);
 
   return (
     <div className="nav-div">
-      Current User: {currentUser.username}
+      <h3 className="current-user"> Hi, {currentUser.username}</h3>
       <button id="logout-btn" onClick={handleLogout}>Logout</button>
       <nav id="nav-bar">
         <NavLink
