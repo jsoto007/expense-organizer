@@ -38,6 +38,42 @@ code {
   float: right;
   padding: 2px;
   background-color: #FDFDFD;
+  margin-right: 50px;
+  margin-top: 28px;
+
+}
+
+.expense-form {
+  /* display: flex; */
+  border:none;
+  flex-direction: column;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  border-radius: 26px;
+  font-size: 17px;
+  padding: 14px 16px;
+  width: 330px;
+  background-color: white;
+  margin-bottom: 24px;
+}
+
+.expense-label {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: x-large;
+  margin-right: 10px;
+}
+
+.expense-label-2 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: x-large;
+  margin-right: 44px;
+}
+
+.expense-div {
+  margin-top: 50px;
+  margin-left: 70px;
 
 }
 
@@ -127,6 +163,7 @@ hr {
   border:none;
   flex-direction: column;
   font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
   border-radius: 26px;
   font-size: 17px;
   padding: 14px 16px;
@@ -141,71 +178,19 @@ hr {
 
 }
 
-/* Drop Down Menu */
-
-/* .category-menu {
-  position: absolute; 
-  top: 4.5rem;
-  right: 1.5rem;
-  width: 120px;
-  padding: 15px;
-  border-radius: 15px;
-  background-color: white;
-
-}
-
-.category-menu::before {
-  content: "";
-  position: absolute;
-  top: -0.7rem;
-  right: 1.1rem;
-  width:20 px;
-  transform: rotate(45deg);
-  background-color: white;
-  border-left: 1px solid grey;
-  border-top: 1px solid grey;
-} */
-/* .link {
-  background: none;
+.category-menu {
   border: none;
-  text-decoration: none;
-  color: #777;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: pointer;
-  padding:0; 
-
+  flex-direction: column;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  border-radius: 26px;
+  font-size: 17px;
+  padding: 14px 16px;
+  width: 330px;
+  background-color: white;
+  margin-bottom: 24px;
+  margin-left: 12px;
 }
-.dropdowm + .link:focus, 
-.link:hover {
-  color: black
-}
-
-.dropdown {
-  position: relative;
-}
-
-.dropdown-menu {
-  position: absolute;
-  left: 0;
-  top: calc(100% + .25rem);
-  background-color: #FDFDFD;
-  padding: .75rem;
-  border-radius: .25rem;
-  box-shadow: 0 2px 5px 0 rgba(0,0,0, .1);
-  pointer-events: none;
-  opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-}
-
-.dropdown > .link:focus + .dropdown-menu {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-} */
-
-/* End of drop dowm menu */
 .delete-div,
 .delete-and-edit {
 

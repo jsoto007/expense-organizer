@@ -14,12 +14,12 @@ function CategoryMenu( {  setExpenseForm, expenseForm } ) {
   }
 
   return (
-    <div className="category-menu">
-      Category
-      <select name="categories" id="categories" onChange={handleSelect}>
+    <div>
+      <label className="expense-label" for="categories" > Categories </label>
+      <select name="categories" className="category-menu" id="categories" onChange={handleSelect}>
           {categoryData.map((cat)=> {
             return (
-              <option key={cat.id} value={cat.id}>{cat.name}</option>
+              <option className="dropdown-menu" key={cat.id} value={cat.id}>{cat.name}</option>
             )
         })}
       </select>
