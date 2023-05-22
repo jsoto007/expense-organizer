@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# About the App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This program is an expense database allowing a user to request and upload information to/from a server. The app enables users to add expenses in the Add Expense from the navigation bar. 
+The user can see the expenses under expenses when selected in the navigation bar. The user can edit, read, or delete any expense, which will update state, and the component will re-render. The user can add new categories under categories in the navigation bar, which do not belong to the user. Categories are visible to all users, and the a user will appear under a category if the user has expenses under that category. 
 
-## Available Scripts
+This app renders only one index.html file in which different components are mounted and unmounted depending on the user's activity. Having one HTML file allows for a more reactive app and smooth transitions.
 
-In the project directory, you can run:
+# Ruby on Rails backend
 
-### `npm start`
+This app runs with a Rails backed using the following models: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+User >- Expenses -< Category
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+User has_many: expenses & and many categories through expenses
+Category has_many: expenses & and many users through expenses
 
-### `npm test`
+This API sends back JSON formatted data. Category: allows reading and creating requests. User: allows read, create,  and expenses: allow full CRUD.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+# Requirements to install and run this program.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Backend 
+Node Package Manager.
+Access to a terminal.
+Internet browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend instructions 
+•	Open and copy the repo from GitHub.
+•	Open the terminal and navigate to the directory you want to clone the program.
+•	Use the git clone command, paste the GitHub repo, and press enter.
+•	CD (change directory) into the file.
+•	Open the file.
+•	Run bundle install in the terminal to install all dependencies.
+- run rails db:migrate db:seed (to set up the migrations and create seed data for the app)
 
-### `npm run eject`
+### Frontend Instructions
+•	CD (change directory) into the client.
+•	Run npm install in the terminal to install all dependencies.
+•	Run npm start  in your terminal to open the page in your internet browser.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+•	Ruby
+•	Access to a terminal.
+•	Internet browser.
+•	Node Package Manager.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Resources
+Faker was used to generate fake data: https://github.com/faker-ruby/faker
+Active record migrations: https://guides.rubyonrails.org/active_record_migrations.html
+Active Record associatoins: https://guides.rubyonrails.org/association_basics.html
