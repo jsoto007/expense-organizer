@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users, only:[:show, :create, :index]
-  resources :expenses, only:[:show, :create, :index, :destroy, :update]
+  resources :expenses
   resources :categories, only:[:index, :create]
 
   get "/auth", to: "users#show"
@@ -9,3 +9,4 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 end
+
