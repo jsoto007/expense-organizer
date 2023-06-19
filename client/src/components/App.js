@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import {Route, Switch } from "react-router-dom"
-import { UserContext } from "../context/UserContextProvider";
 import Navbar from "./Navbar";
 import Expenses from "./Expenses";
 import ExpenseForm from "./ExpenseForm";
@@ -9,9 +8,9 @@ import Categories from "./Categories";
 
 function App() {
 
-  const {currentUser}  = useContext(UserContext);
+  const userLogedIn = window.localStorage.getItem("isLoggedIn");
 
-  if (!currentUser.id) return <Auth />
+  if (userLogedIn === null) return <Auth />
   
   return (
     <div className="App">

@@ -2,9 +2,6 @@ import React, { useContext } from "react";
 import ExpenseCard from "./ExpenseCard";
 import { UserContext } from "../context/UserContextProvider";
 
-
-
-
 function Expenses() {
 
   const {currentUser} = useContext(UserContext)

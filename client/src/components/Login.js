@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { UserContext } from "../context/UserContextProvider";
+import { useHistory } from "react-router-dom";
 
 
 function Login() {
@@ -13,6 +14,8 @@ function Login() {
 
   const [errors, setErrors] = useState([])
 
+  const history = useHistory();
+
  async function handleSubmit(e) {
     e.preventDefault();
     const response = await fetch(`/login`, {
@@ -25,9 +28,18 @@ function Login() {
     const data = await response.json();
       if(response.ok){
         setCurrentUser(data)
+        window.localStorage.setItem("isLoggedIn", true)
+        handleReload();
       } else {
         setErrors(data.error)
       }
+  }
+
+  function handleReload() {
+
+    setTimeout(function(){
+      window.location.reload();
+  }, 100);
   }
 
   function handleChange(e) {

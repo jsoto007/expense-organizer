@@ -10,7 +10,7 @@ function ExpenseForm() {
   const { currentUser, setCurrentUser} = useContext(UserContext);
   const { categoryData, setCategoryData } = useContext(DataContext);
 
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState({});
 
   const [expenseForm, setExpenseForm] = useState({
     amount: "",
@@ -62,6 +62,8 @@ function ExpenseForm() {
       })
       setCategoryData(updatedCategories)
     }
+
+    console.log(errors)
   
    function handleChange(e) {
      const key = e.target.name;
